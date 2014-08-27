@@ -1,0 +1,4 @@
+header.post-list-header
+  h1.post-list-header-title <strong>#{ name }</strong> blog.
+  != partial("about/_about_me")
+!= partial("_shared/articles", { postlimit: 1 })
