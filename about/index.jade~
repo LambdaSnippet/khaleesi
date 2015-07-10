@@ -1,4 +1,0 @@
-current.path
-!= partial("_about_me")
-!= partial("_about_me_complete")
-
