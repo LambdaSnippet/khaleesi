@@ -6,6 +6,48 @@
   };
   var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
 })();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  lfcover.src = track.image[0]["#text"];
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
 //]]></script></head><body><div class="opening"><img src="/images/sobre-este-blog.jpg" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Sobre este blog</h1><time datetime="2014-08-26" class="opening-time">2014-08-26</time></div></header></div><div role="main" class="container"><p>No estoy seguro si el termino correcto para este nuevo proyecto sea &quot;blog&quot;. Los blog&#39;s están sobrevalorados hoy en día. Pero dada la falta de creatividad lo seguiré dejando como tal.</p>
 <p>Hace algunos años, forme parte del auge de la comunidad blogger, tal vez no muy conocido, pero recuerdo que sentía una gran satisfacción el pensar que mi contribución serviría a alguien en cualquier parte del mundo.</p>
 <p>Sin embargo, el gusto por escribir data de mucho tiempo atrás. Mi viejo <a href="http://lesthack.com.mx">blog</a> solo es un fósil de mi gusto por la tecnología, la programación y el software libre. Pero también gusté de escribir ficción y poesía, que de momento, no abordaré hasta su debido momento.</p>

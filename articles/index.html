@@ -6,6 +6,48 @@
   };
   var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
 })();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  lfcover.src = track.image[0]["#text"];
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
 //]]></script></head><body><div role="main" class="container container--articles"><header class="post-list-header"><h1 class="post-list-header-title">Articles</h1></header><ul class="post-list"><li class="post-item"><a href="/articles/mi-viejo-blog"><time datetime="#{ new Date(article.date }" class="post-meta-date post-date">2015-07-10</time><h4 class="post-item-title-second">Mi viejo blog.</h4><p class="post-item-description">Recuperando el contenido de mi viejo blog lesthack.com.mx a old.jorgeluis.com.mx.</p><ul class="post-meta-list"><li class="post-meta-item">Jorge Hernández</li><li class="post-meta-item"><a href="/articles/mi-viejo-blog#disqus_thread" class="post-comment-link">Comments</a></li></ul></a></li><li class="post-item"><a href="/articles/primer-lenguaje-python"><time datetime="#{ new Date(article.date }" class="post-meta-date post-date">2015-03-20</time><h4 class="post-item-title-second">5 buenas razones para aprender Python.</h4><p class="post-item-description">5 razones por las que un novato debería elegir a python como su primer lenguaje de programación.</p><ul class="post-meta-list"><li class="post-meta-item">Jorge Hernández</li><li class="post-meta-item"><a href="/articles/primer-lenguaje-python#disqus_thread" class="post-comment-link">Comments</a></li></ul></a></li><li class="post-item"><a href="/articles/break"><time datetime="#{ new Date(article.date }" class="post-meta-date post-date">2015-03-13</time><h4 class="post-item-title-second">break;</h4><p class="post-item-description">3 peliculas que logran inspirarme.</p><ul class="post-meta-list"><li class="post-meta-item">Jorge Hernández</li><li class="post-meta-item"><a href="/articles/break#disqus_thread" class="post-comment-link">Comments</a></li></ul></a></li><li class="post-item"><a href="/articles/return"><time datetime="#{ new Date(article.date }" class="post-meta-date post-date">2015-01-16</time><h4 class="post-item-title-second">return 0;</h4><p class="post-item-description">Retomemos el proyecto.</p><ul class="post-meta-list"><li class="post-meta-item">Jorge Hernández</li><li class="post-meta-item"><a href="/articles/return#disqus_thread" class="post-comment-link">Comments</a></li></ul></a></li><li class="post-item"><a href="/articles/bueno-bonito-barato"><time datetime="#{ new Date(article.date }" class="post-meta-date post-date">2014-08-27</time><h4 class="post-item-title-second">Bueno, bonito y barato</h4><p class="post-item-description">Como volví a montarte este proyecto de forma fácil, sencilla y económica.</p><ul class="post-meta-list"><li class="post-meta-item">Jorge Hernández</li><li class="post-meta-item"><a href="/articles/bueno-bonito-barato#disqus_thread" class="post-comment-link">Comments</a></li></ul></a></li><li class="post-item"><a href="/articles/sobre-este-blog"><time datetime="#{ new Date(article.date }" class="post-meta-date post-date">2014-08-26</time><h4 class="post-item-title-second">Sobre este blog</h4><p class="post-item-description">El por que me decidí a volver a escribir.</p><ul class="post-meta-list"><li class="post-meta-item">Jorge Hernández</li><li class="post-meta-item"><a href="/articles/sobre-este-blog#disqus_thread" class="post-comment-link">Comments</a></li></ul></a></li></ul></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">blog</a> | <a href="/Papers">papers</a> | <a href="http://old.jorgeluis.com.mx">old</a> </p></footer></body><script>var disqus_shortname = 'true';
 (function () {
     var s = document.createElement('script'); s.async = true;
