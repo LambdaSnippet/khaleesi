@@ -34,7 +34,14 @@
               var lfcover = document.getElementById('cover');
                   lfsong.innerHTML = track.name;
                   lfartist.innerHTML = track.artist['#text'];
-                  lfcover.src = track.image[0]["#text"];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
                   lfdiv.href = track.url;
                   lfdiv.style.display = '';
             }
@@ -48,8 +55,9 @@
   
   window.setInterval(scrobbler, 60000);
   scrobbler();
-//]]></script></head><body><div class="opening"><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Jorge Hernández.</h1></div></header></div><div role="main" class="container"><p>Quisiera considerarme un gran fan a la lectura, sin embargo, solo en mi edad temprana lo fui y hoy, lamentablemente carezco del hábito y el tiempo para leer como yo realmente quisiera.</p>
-<p>Los libros para mi siempre han tenido un atractivo indescriptible, aunque he de confesar que no tome un libro enserio si no hasta la edad de los 14 o 15 años. </p>
+//]]></script></head><body><div class="opening"><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Jorge Hernández.</h1></div></header></div><div role="main" class="container"><p>Quisiera considerarme un gran fanático a la lectura, sin embargo, solo en mi edad temprana lo fui y hoy, lamentablemente carezco del hábito y el tiempo para leer como yo realmente quisiera. </p>
+<p>Los libros para mi siempre han tenido un atractivo indescriptible. Aunque he de confesar que no tomé un libro enserio si no hasta la edad de los 14 o 15 años argumentando que los libros no eran para mi. Ahora que lo analizo con detalle, este pequeño bug estaba implantado en mi cerebro desde la educación básica que recibí en mi infancia, esa educación torpe en la que te obligaban a repetir una y otra vez cosas, como reglas de multiplicar, y en las que, poco a poco, comienzas a detestar el tener que memorizar citas, fechas o nombres.</p>
+<p>La historia y la literatura, de la mano de mis profesores, pasaron desapercibidas. Nunca me enseñaron a amarlas, a tomarlas enserio, a sentir las letras de una poesía, de un relato, de algo escrito por alguien como música en rimas. Siempre trataron mi mente cual si de un disco de almacenamiento se tratase sin siquiera tener el cuidado de no estropearlo. </p>
 <p>Es decir que, cuando era niño, siempre los vi en aquellos estantes de mi madre, arrumbados y llamándome a gritos. </p>
 <p>Aunque mi entrada a la literatura fue tardía, no recuerdo cual fue el primer libro que leí, pero recuerdo cuales fueron aquellos que marcaron mi mente por la sagacidad con la que el escritor escribió aquellos épicos textos para mi.</p>
 <p>Autores como Julio Verne, Lovecraft,</p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

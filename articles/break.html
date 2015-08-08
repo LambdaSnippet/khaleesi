@@ -34,7 +34,14 @@
               var lfcover = document.getElementById('cover');
                   lfsong.innerHTML = track.name;
                   lfartist.innerHTML = track.artist['#text'];
-                  lfcover.src = track.image[0]["#text"];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
                   lfdiv.href = track.url;
                   lfdiv.style.display = '';
             }
