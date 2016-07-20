@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Inspiración
+</title><meta property="description" content="La inspiración es aquello que bien podría considerarse un &quot;don divino&quot;. Es la madre de todas las creaciones hermosas que podemos apreciar en el mundo, y acceder a ella es tan simple o complejo según tengas tu mente abierta a ello.
+"/><meta property="og:description" content="La inspiración es aquello que bien podría considerarse un &quot;don divino&quot;. Es la madre de todas las creaciones hermosas que podemos apreciar en el mundo, y acceder a ella es tan simple o complejo según tengas tu mente abierta a ello.
+"/><meta property="og:url" content="http://jorgeluis.com.mx/articles/inspiracion/"/><meta property="og:type" content="website"/><meta property="og:title" content="Inspiración
+"/><meta property="og:image" content="http://jorgeluis.com.mx/images/inspiracion.jpg"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/inspiracion.jpg" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Inspiración
+</h1><time datetime="2016-07-18" class="opening-time">2016-07-18</time></div></header></div><div role="main" class="container"><p>Después de haber dejado abandonado el blog (nuevamente, lo sé), lucho internamente por proponerme ser constante, y comenzar un ritmo de publicación que casi me obligue a tener una responsabilidad, pero es que no he encontrado la <em>inspiración</em> para hacerlo.</p>
+<p>Ideas las ha tenido en muchas direcciones. ¿Temas? Los hay a chorros, ¿el tiempo?, se que hay que buscarlo afanosamente y tratarlo con delicadeza, para que éste me permita hacer de él, mi mas atendido huésped. </p>
+<p>¿Que tal tu?,  ¿te sientes inspirado?</p>
+<p>Hoy, me he tomado una libertad que hace mucho no hacía, desvelarme. Hoy caí rendido a las 2 am, y en absoluto lo hice por trabajo. Hace mucho que no lo hago, ni por trabajo, ni por hobbie. Recuerdo mis días de universitario y pre-universitario, desvelándome diariamente tratando de comerme grandes cantidades de información, aprendiendo, experimentando y pensando que todo el mundo estaba a mi alcance. </p>
+<p>Había noches tan inquietantes en ese mundo digital, del que se desprendían movimientos super interesantes y underground como el ciberpunk mismo y que hoy en día, son solo leyendas. Noches llenas de emoción frente a un simple ordenador, de que podían emanar lineas y lineas de texto, o código y hacks. </p>
+<p>Pero ésta noche solo me he desvelado por una sola razón; <strong>Mr. Robot</strong>.</p>
+<p><em>eps2.0_unm4sk-pt1.tc y eps2.0_unm4sk-pt2.tc</em></p>
+<p>Sin precisar nada sobre la serie (tu mismo tienes que descubrirla), vemos a un personaje como pocos se han pitando en los show televisivos. Lucha una batalla interna, crea mundos aislados de todos, incluso de si mismo, pero al mismo tiempo lucha contra la áspera y estereotipada sociedad que todos nos aferramos a no ver pero que ahí está y nos consume poco a poco. </p>
+<p>¿Nos es familiar?, Por supuesto, <a href="https://www.google.com.mx/search?q=mr+robot+elliot&amp;biw=1920&amp;bih=953&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwig3pyzi4POAhUi4YMKHUQPDQAQ_AUIBigB">Elliot</a> es como un homunculo de nuestras especulaciones, miedos, furias y desesperaciones, y por ésto mismo, congeniamos a la perfección.</p>
+<p><img src="https://s31.postimg.org/t1673znvf/medium_clean.png" alt="Mr. Robot"></p>
+<p>Viene a mi mente una serie de frames; Elliot busca en su diario (o log ?) lo último que escribió en cierto rango de fecha y hora que no recuerdo ahora mismo. Vislumbro un código QR dibujado a lápiz al pasar las primeras páginas, y viene a mi mente el tratar de descifrarlo (<a href="https://www.reddit.com/r/MrRobot/comments/4s8n1m/all_spoilersremade_the_handdrawn_qr_code_into_an/">pero alguien mas ya lo ha echo</a>). </p>
+<p>Es un <a href="http://www.conficturaindustries.com/">link</a> que nos lleva a un sitio web viejo (¿el primer website que programo Elliot?) y comienzo a recordar mis primeros esfuerzos de creaciones digitales. Mi mente trabaja, miro el código detrás del website (<a href="https://www.reddit.com/r/MrRobot/comments/4sfgui/spoilers_s2e1_i_cleaned_up_the_qr_code_in_elliots/">nuevamente no soy el primero</a>) y comienzo a descubrir cosas. </p>
+<p>Veo el misterioso <a href="http://www.conficturaindustries.com/js/webmaster_analytics.js">js/webmaster_analytics.js</a>, también el <a href="http://www.conficturaindustries.com/images/DancingBaby.gif">DancingBaby.gif</a> tan usado en los 90s.</p>
+<p>De nuevo recuerdo que en los 90&#39;s y parte del 2k, sitios extraños nos invitaban a probar suerte descubriendo Eggs y <a href="http://www.hakim.ws/ezines/ezines.html">cosas ocultas</a>. </p>
+<p>¿Mr. Robot esconde mas? Si, en el primer episodio recuerdo haber visto terminales, shells y algo parecido a Metasploit aplicando payloads. Así que decido volver a ver el episodio eps2.0_unm4sk-pt1.tc para intentar descubrir algo.</p>
+<p><img src="https://s32.postimg.org/l0z9dloed/Screenshot_from_2016_07_20_16_38_25.png" alt="Elliot y EvilCorp"></p>
+<p>Elliot se encuentra en una terminal, accede vía ssh a un servidor <a href="http://bkuw300ps345672-cs30.serverfarm.evil-corp-usa.com/">bkuw300ps345672-cs30.serverfarm.evil-corp-usa.com</a>, el cual, si, pertenece a Evilcorp (Bonito detalle de USA Networks). Posteriormente, va al path donde tiene alojado una serie de scripts, y ejecuta <a href="https://gist.github.com/anonymous/1073ef3c378fda7b8369">fuxsocy.py</a>.</p>
+<p><img src="https://s31.postimg.org/v1bvcdzi3/Screenshot_from_2016_07_20_16_44_39.png" alt="Darlene Social-Enginer Toolkit"></p>
+<p>Minutos mas tarde, veo a <a href="https://www.google.com.mx/search?q=mr+robot+darlene&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=0ahUKEwj2hsXkg4POAhXM5oMKHeiFDiYQ_AUICCgB&amp;biw=1920&amp;bih=953">Darlene</a> sentada frente a una laptop. También escribiendo comandos en una consola, usa algo llamado Social-Engineer Toolkit, y veo finalmente una dirección IP, 192.251.68.254.</p>
+<p>Esta IP corresponde a <a href="http://i239.bxjyb2jvda.net/">http://i239.bxjyb2jvda.net/</a>, e intentando ver el <a href="https://gist.github.com/anonymous/7d86d8a58ac8085bb1b6a718f299ed23">código fuente</a>, descubrimos un &quot;<strong>You are not alone</strong>&quot;.</p>
+<p>Esperen, también hay un <a href="http://i239.bxjyb2jvda.net/web_analytics.js">web_analytics.js</a>, pero éste tiene algo ofuscado.</p>
+<pre><code class="language-javascript">
+q=&#39;PGRpdiBjbGFzcz0ib3ZlciI+PGRpdj4iSSBzaW5jZXJlbHkgYmVsaWV2ZSB0aGF0IGJhbmtpbmcgZXN0YWJsaXNobWVudHMgYXJlIG1vcmUgZGFuZ2Vyb3VzIHRoYW4gc3RhbmRpbmcgYXJtaWVzLCBhbmQgdGhhdCB0aGUgcHJpbmNpcGxlIG9mIHNwZW5kaW5nIG1vbmV5IHRvIGJlIHBhaWQgYnkgcG9zdGVyaXR5LCB1bmRlciB0aGUgbmFtZSBvZiBmdW5kaW5nLCBpcyBidXQgc3dpbmRsaW5nIGZ1dHVyaXR5IG9uIGEgbGFyZ2Ugc2NhbGUuIjwvZGl2PjxkaXYgY2xhc3M9ImF1dGhvciI+LSBUaG9tYXMgSmVmZmVyc29uPC9zcGFuPjwvZGl2PjwvZGl2Pg==&#39;;
+</code></pre>
+<p>Reconocemos es texto en base64, así que, un decode y veremos el contenido. ¿Alguien mas se dio cuenta?, <a href="https://www.reddit.com/r/MrRobot/comments/4sfgui/spoilers_s2e1_i_cleaned_up_the_qr_code_in_elliots/">Si</a>, y han <a href="https://gist.github.com/eyecatchup/84aec347c6a1b90890dad8953d7e8c67">publicado</a> el <a href="http://i.imgur.com/iG3QUYA.png">resultado</a> al terminar el countdown.</p>
+<p>Esto ha sido mas que suficiente como para empujarme a abrir el ordenador y comenzar a escribir. Elliot y fsociety me han brindado un poco de inspiración, de esa, que hace años había dejado de percibir.</p>
+<p>Gracias.</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><ol class="post-nav"><a href="antologia-de-terror" class="post-next">Antología de Terror</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">blog</a> | <a href="/Papers">papers</a> | <a href="http://old.jorgeluis.com.mx">old</a> </p></footer></body><script>var disqus_shortname = 'true';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>
