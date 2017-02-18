@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Jorge Hernández.</title><link>http://jorgeluis.com.mx</link><description>Blog, hacks, and freaks.</description><atom:link href="http://jorgeluis.com.mx/feed.xml" rel="self" type="application/rss+xml"></atom:link><item><title>Enero, Proxy</title><description> <![CDATA[ <img src="/images/enero-proxy.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>Estuve dándole muchas vueltas a 'que rayos !' tendría que escribir en el primer post del 2017, pero sinceramente, no pude decidirme, ya sea por que tengo muchas cosas en la cabeza, o por que esas tantas cosas que digo que tengo, al final, son nada.</blockquote> ]]>
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Jorge Hernández.</title><link>http://jorgeluis.com.mx</link><description>Blog, hacks, and freaks.</description><atom:link href="http://jorgeluis.com.mx/feed.xml" rel="self" type="application/rss+xml"></atom:link><item><title>Goodbye Horses</title><description> <![CDATA[ <img src="/images/goodbye-horses.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>Hace algunos días, fui víctima de un ataque DDOS, y para no repetir la experiencia, tuve que tomar una fuerte decisión.</blockquote> ]]>
+<![CDATA[<p>Hace algunos días, fui víctima de un ataque <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">DDOS</a> en uno de mis servidores personales (montado en <a href="https://frantech.ca/">frantech</a> por cierto).</p>
+<p><style>
+    twitterwidget{
+            margin: auto;
+    }
+</style></p>
+<p><blockquote style="margin: auto;" class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">ok, uno de mis sitios esta siendo victima de un DDOS. No sean cabrones !!</p>&mdash; Jorge Hernández (@lesthack) <a href="https://twitter.com/lesthack/status/830111458725801984">February 10, 2017</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Mi proveedor pudo detectarlo a tiempo, y me desconecto por una hora para tratar de pararlo.</p>
+<p>Los ataques de DDOS tienen un gran grado de complejidad para detenerlos. En mi caso, y por tratarse de un servidor muy sencillo, tirarlo resulta demasiado fácil, y cualquiera con los mínimos conocimientos puede hacerlo (pero no lo hagan por favor, no sean cabrones !!).</p>
+<p>Las grandes compañías pagan cientos de dolares a expertos de redes, seguridad y devops para evitar en lo mayor de lo posible ser víctimas de este tipo de ataques.</p>
+<p>Algunos incluso optan por separar en capas y niveles su arquitectura, de tal forma que los servidores frontales, puedan encenderse y apagarse con facilidad para esquivarlos.</p>
+<p>Lo cierto es que, el ataque (en mi caso) tenia un propósito; y era explotar un bug de un wordpress (poco mantenido) que tenía.</p>
+<p>Así que, con todo el dolor de mi corazón, tuve que matar ese Wordpress. Un Wordpress que contiene <a href="/articles/mi-viejo-blog">mi viejo blog</a>, y que tendré que dejar por ahora archivado.</p>
+<p>Adiós archivos de mi viejo blog.</p>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/130704177&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+
+<p>RIP <a href="https://www.google.com.mx/search?q=codeplasticlesthack">codeplasticlesthack</a> 2007-2017</p>
+<hr>
+<p style="font-size: 10px;">Imagen del Header <a href="https://pixabay.com/p-1668538/?no_redirect">Canoe</a> de <a href="https://pixabay.com/es/users/olivierlabbe1-2832716/">olivierlabbe1-2832716</a></p>]]></description><pubDate>Sat Feb 18 2017 00:00:00 GMT+0000 (UTC)</pubDate><link>http://jorgeluis.com.mx/blog/goodbye-horses</link><guid isPermaLink="true">http://jorgeluis.com.mx/blog/goodbye-horses</guid></item><item><title>Enero, Proxy</title><description> <![CDATA[ <img src="/images/enero-proxy.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>Estuve dándole muchas vueltas a 'que rayos !' tendría que escribir en el primer post del 2017, pero sinceramente, no pude decidirme, ya sea por que tengo muchas cosas en la cabeza, o por que esas tantas cosas que digo que tengo, al final, son nada.</blockquote> ]]>
 <![CDATA[<p>Estuve dándole muchas vueltas a &quot;que rayos !&quot; tendría que escribir en el primer Post del 2017, pero sinceramente, no pude decidirme, ya sea por que tengo muchas cosas en la cabeza, o por que esas tantas cosas que digo que tengo, al final, son nada.</p>
 <p>Así que, solo quisiera compartirles algunas publicaciones de gente que realmente escribe cosas interesantes y que pude rescatar de mis lecturas a finales de año e inicios de éste.</p>
 <p><a href="https://hipertextual.com/2017/01/guadalajara-hub-innovacion">El sueño americano se ha mudado a Guadalajara</a> - <strong>Hipertextual</strong></p>
