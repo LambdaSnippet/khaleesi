@@ -1,0 +1,22 @@
+.cover{
+    border: 3px solid #000;
+    display: inline-block; 
+    vertical-align: top; 
+    cursor: hand;
+}
+.cover:hover{
+    border: 3px solid #46788f;
+    z-index: 1000;
+}
+@media (min-width: 40em) {
+    #topalbums{
+        column-count: 6; 
+        column-gap: 0;
+    }
+}
+@media (max-width: 39em){
+    #topalbums{
+        column-count: 3; 
+        column-gap: 0;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Jorge Hernández.</title><meta property="description" content="Soy un programador (de la old school), forjado desde los 15 años, autodidacta, curioso, y siempre presente de una u otra forma en Internet."/><meta property="og:description" content="Soy un programador (de la old school), forjado desde los 15 años, autodidacta, curioso, y siempre presente de una u otra forma en Internet."/><meta property="og:url" content="http://jorgeluis.com.mx/"/><meta property="og:type" content="website"/><meta property="og:image" content="http://jorgeluis.com.mx/images/about.jpg"/><meta property="og:title" content="Jorge Hernández."/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><link rel="stylesheet" href="/css/hacks.css"><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script></head><body><div role="main" class="container"><script>//<![CDATA[
+$(function(){
+    var json_url = "https://gist.githubusercontent.com/lesthack/2390d66f3c27d694727864be2b4815ad/raw/c8e7b33961527c77b7f84c36c0a7d22edd819bb2/test.json";
+    var size = 200;
+    var max_size = 130;
+    var sub_size = 5;
+    var div_albums = $("#topalbums");
+    $.ajax({
+        url : json_url,
+        jsonp : 'callback',
+        dataType : 'text',
+        data : {
+        },
+        success : function(text_response) {
+            var json_response = JSON.parse(text_response);
+            for(var i=0; i < json_response.topalbums.length; i++){
+                if(json_response.topalbums[i].image){
+                    var div_img = $("<a/>")
+                        .attr("class", "cover")
+                        .attr("style", "width: " + size + "px; height: " + size + "px; background-size: " + size + "px " + size + "px; background-image: url(data:image/png;base64," + json_response.topalbums[i].image + ");")
+                        .attr("href", json_response.topalbums[i].url)
+                        .attr("title", json_response.topalbums[i].artist + " - " + json_response.topalbums[i].album)
+                        .attr("target", "_blank");
+                    div_albums.append(div_img);
+                    
+                    if(size > max_size){
+                        size -= sub_size;
+                    }
+                }
+            }
+        }
+    });
+})</script><!--]]>--><h1>Top Albums</h1><div id="topalbums"></div></div></body></html>
