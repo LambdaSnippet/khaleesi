@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>La primer carta</title><meta property="description" content="El 21 de Marzo del 2012 escribí esta carta llena de sueños y esperanzas. Hoy, esos sueños y esperanzas tienen nombre; Dalia."/><meta property="og:description" content="El 21 de Marzo del 2012 escribí esta carta llena de sueños y esperanzas. Hoy, esos sueños y esperanzas tienen nombre; Dalia."/><meta property="og:url" content="http://jorgeluis.com.mx/articles/la-primer-carta"/><meta property="og:type" content="website"/><meta property="og:title" content="La primer carta"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="og:image" content="http://jorgeluis.com.mx/images/la-primer-carta.jpg"/><meta property="twitter:image" content="http://jorgeluis.com.mx/images/la-primer-carta.jpg"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/la-primer-carta"/><meta property="twitter:card" content="El 21 de Marzo del 2012 escribí esta carta llena de sueños y esperanzas. Hoy, esos sueños y esperanzas tienen nombre; Dalia."/><meta property="twitter:title" content="La primer carta"/><meta property="twitter:description" content="El 21 de Marzo del 2012 escribí esta carta llena de sueños y esperanzas. Hoy, esos sueños y esperanzas tienen nombre; Dalia."/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/la-primer-carta.jpg" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">La primer carta</h1><time datetime="2017-10-30" class="opening-time">2017-10-30</time></div></header></div><div role="main" class="container"><style>    
+    i{
+        font-family: Sofia, cursive;
+    }
+</style>
+
+<p>21 de Marzo, 2012</p>
+<p>A la pequeña que tanto anhelo ver ya.</p>
+<iframe width="100%" height="355" src="https://www.youtube.com/embed/fzQ6gRAEoy0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+<p>Un día, ya hace mucho tiempo, mas de lo que puede caber en la palabra “mucho”, soñé con una hermosa damita, que vestía de pasteles blancos, que reía y alumbraba como un sol.</p>
+<p>Estas a unos pocos días de llegar, y añoro cada segundo que pasa, el momento en el que pueda tomarte en mis brazos y saber que eres una realidad.</p>
+<p>Sabrás pues que una vez nacida, comenzará la cuenta progresiva de tu edad, y acumularás de pronto un día, dos, cinco, veinte, y de pronto serán meses y años también. Pero para mi, tu vida a comenzado ya desde antes, y hasta hoy nos has regalado casi nueve meses de felicidad perpetua.</p>
+<p>Eres increíblemente traviesa, inquieta, juguetona y curiosa, por que aunque nada puedes ver, todo aquel sonido que llega a ti, es razón pura para que muestres una mueca a través de la pancita de tu mami; y que, los que admirados como yo (también curioso por cierto), vemos como un movimiento lento atraviesa desde el costado izquierdo inferior hasta el ombligo.</p>
+<p>Ay, ay, aaay ! Dice de pronto tu mámi, y no es para menos, ella está nerviosa, y con todo el derecho. Sabe que pronto será el momento. Y yo preocupado, a las tres de la mañana le pregunto “¿que paso?“ tratando de abrir lo mas que puedo los ojos, a lo que ella simplemente dice “se ha movido”, se re-acomoda y trata de reconciliar el sueño, una falsa alarma solamente.</p>
+<p>Ya falta poco, no tardes, que ya tenemos todo listo.</p>
+<p>
+<p>
+<p style="text-align: right"><i>Tu papi que te ama desde hace mucho y<br> te amará por siempre. <br>- Jorge Luis -</i></p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><ol class="post-nav"><a href="19s" class="post-next">19 de Septiembre</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'true'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'true';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>
