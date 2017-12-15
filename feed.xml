@@ -1,4 +1,71 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Jorge Hernández.</title><link>http://jorgeluis.com.mx</link><description>Blog, hacks, and freaks.</description><atom:link href="http://jorgeluis.com.mx/feed.xml" rel="self" type="application/rss+xml"></atom:link><item><title>La primer carta</title><description> <![CDATA[ <img src="/images/la-primer-carta.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>El 21 de Marzo del 2012 escribí esta carta llena de sueños y esperanzas. Hoy, esos sueños y esperanzas tienen nombre; Dalia.</blockquote> ]]>
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Jorge Hernández.</title><link>http://jorgeluis.com.mx</link><description>Blog, hacks, and freaks.</description><atom:link href="http://jorgeluis.com.mx/feed.xml" rel="self" type="application/rss+xml"></atom:link><item><title>Metas</title><description> <![CDATA[ <img src="/images/metas.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>No soy de los define propósitos de 'año nuevo', pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, y para ello, tengo algunos tips que pueden ayudar a seleccionar las mejores.</blockquote> ]]>
+<![CDATA[<p>El fin de año está cerca, y la mayoría se encuentra cerrando ciclos o proyectos, y tal vez, los mas precavidos, comienzan a planear los nuevos retos o metas para el siguiente año.</p>
+<p>Como <a href="/articles/return">ya lo había dicho antes</a>, no soy de los define propósitos de &quot;año nuevo&quot;, pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, que van desde terminar una cantidad <strong>X</strong> de libros al año, hasta ver un listado <strong>Y</strong> películas o series.</p>
+<p>Pero hablando mas seriamente de Metas, existe un alto porcentaje de fracasos en su ejecución completa, y creo que mucho se debe al mal planteamiento que tienen.</p>
+<p>Una meta mal planteada muy posiblemente no podrá medirse, y si una meta no se puede medir, es inútil.</p>
+<p>Como contexto, en la empresa donde laboro, ya habíamos pasado por varias etapas en las que se trataban de implementar herramientas que nos ayudarán a definirlas, seleccionarlas y medirlas. Entre estas herramientas se encontraban los <a href="https://es.wikipedia.org/wiki/OKR">OKR&#39;s</a>. Pero, no ayudó mucho el énfasis en la importancia de éstas y fracasaron.</p>
+<p>Sin embargo, hace tiempo, mi jefe me compartió <a href="https://hbr.org/product/hbr-tools-goal-setting/TLGOAL-ZIP-ENG">un articulo</a> muy interesante que nos permitió definir (a modo de herramienta), como establecer metas efectivas de forma muy simple.</p>
+<p>En ese momento me pareció tan bueno el articulo, que hice un resumen que pudiera compartirles a mis colaboradores.</p>
+<h2>Exprimiendo <a href="https://hbr.org/product/hbr-tools-goal-setting/TLGOAL-ZIP-ENG">HBR Tools: Goal Setting</a> de <a href="https://www.groteconsulting.com/us/dick-grote/">Dick Grote</a></h2><p>La forma de establecer metas deberá ser meramente a consideración del responsable. Debe ser capaz de ver el alcance e impacto que está tendrá si se logra, por lo que, simplemente Grote nos ayuda un poco a seleccionarlas y formalizarlas.</p>
+<style>
+ul, ol, li{
+    padding: inherit;
+}
+h3 {
+    margin: 20px 0px;
+}
+</style>
+
+<h3>¿ Cuantas y cómo seleccionarlas ?</h3><ol>
+<li>Cada persona no deberá de establecer más de 3 metas. Probablemente mas perjudicará la productividad del todo el trabajo. </li>
+<li>Las metas fáciles de alcanzar no inspiran, las metas deberán ser un reto. También hay que ser realistas y no proponerse metas imposibles.</li>
+<li>Las metas van mas allá de las responsabilidades normales. No vale lo que ya haces de forma rutinaria.</li>
+<li>Fijar periodos cortos de tiempo (Si una meta cuesta más de 3 meses, es una meta grande), en ese caso, habrá que dividirla.</li>
+<li>Las metas deberán comenzar con la acción de un verbo y un resultado clave identificable. Ejemplo: “Reducir el número de quejas de clientes a un 6%”</li>
+</ol>
+<h3>¿ Como saber que metas establecer ?</h3><ol>
+<li>Aquellas enfocadas a la estrategia de la empresa primero. Una empresa incluso puede ser tu hogar.</li>
+<li>Aquellas que van orientadas a los planes y estrategias de tu equipo. En casa, el equipo puede estar dividido en cada individuo.</li>
+</ol>
+<h3>Sugerencias para ayudar a determinas metas</h3><ol>
+<li>Comentar o sugerir previamente: <ol>
+<li>¿ Cuales son las áreas específicas donde se necesita atención ? </li>
+<li>¿ Cuales son las áreas que consideras deben prestarse más atención en el futuro próximo ? </li>
+</ol>
+</li>
+<li>Problemas de organización y oportunidades:<ol>
+<li>Cada individuo puede ver probablemente áreas donde el puede hacer mejoras. Él mismo puede detectar dónde puede haber una mejora o corrección. </li>
+</ol>
+</li>
+<li>Desarrollo personal e intereses personales:<ol>
+<li>¿Qué habilidades quiere desarrollar? ¿Qué es lo que le apasiona? </li>
+</ol>
+</li>
+<li>Responsabilidades clave de trabajo:<ol>
+<li>Estas pueden servir para determinar una meta global.</li>
+</ol>
+</li>
+</ol>
+<h3>Pasos para establecer meta:</h3><p>Si eres líder de un equipo, puedes ayudar a tus colaboradores a establecer metas en conjunto. Para ello, puedes seguir lo siguiente:</p>
+<ol>
+<li>Explicar el establecimiento de metas con los siguientes puntos:<ol>
+<li>Se debe estar en acuerdo mutuo en la definición de las metas</li>
+<li>Hacer saber cuales son las metas efectivas</li>
+<li>Tener en cuenta donde se va a establecer la meta, compartir la estrategia de la empresa/departamento. Ver el “Como saber que metas establecer”</li>
+<li>Conocer el formato y entenderlo completamente</li>
+<li>Pedirle que envíe un proyecto de metas, usando un formato determinado, y revisarlo juntos para finalizar las metas.</li>
+</ol>
+</li>
+<li>Desarrollar un borrador de metas</li>
+<li>Revisar metas antes de reunirse</li>
+<li>Reunirse para establecer las metas</li>
+<li>Pedirle directamente el formato</li>
+<li>Aprobar el plan</li>
+</ol>
+<p>Considera que el monitoreo de las metas deberá ser la pauta para darse cuenta si van destinadas al éxito o al fracaso. Al final, evalúate sin trampas.</p>
+<hr>
+<p style="font-size: 10px;">Imagen del Header de <a href="https://unsplash.com/photos/fMD_Cru6OTk">Cathryn Lavery</a></p>
+]]></description><pubDate>Thu Nov 30 2017 00:00:00 GMT+0000 (UTC)</pubDate><link>http://jorgeluis.com.mx/blog/metas</link><guid isPermaLink="true">http://jorgeluis.com.mx/blog/metas</guid></item><item><title>La primer carta</title><description> <![CDATA[ <img src="/images/la-primer-carta.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>El 21 de Marzo del 2012 escribí esta carta llena de sueños y esperanzas. Hoy, esos sueños y esperanzas tienen nombre; Dalia.</blockquote> ]]>
 <![CDATA[<style>    
     i{
         font-family: Sofia, cursive;
