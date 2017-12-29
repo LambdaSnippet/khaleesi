@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>2011 de muchos cambios, 2012 de nuevos retos.</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/2011-de-muchos-cambios-2012-de-retos-nuevos"/><meta property="og:type" content="website"/><meta property="og:title" content="2011 de muchos cambios, 2012 de nuevos retos."/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/2011-de-muchos-cambios-2012-de-retos-nuevos"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="2011 de muchos cambios, 2012 de nuevos retos."/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">2011 de muchos cambios, 2012 de nuevos retos.</h1><time datetime="2012-01-31" class="opening-time">2012-01-31</time></div></header></div><div role="main" class="container"><blockquote>
+Si, lo sé, un post con tal titulo debía haber sido publicado hace días, pero, nuevamente la falta de tiempo.
+</blockquote>
+
+<p>Sin lugar a dudas, el
+<strong>
+2011
+</strong>
+fue un año extraordinario, lleno de retos, de proyectos grandes e importantes, pero sobre todo, de grandes cambios en mi vida.</p>
+<p>Tengo 2 noticias que dar, y lo hago aquí, en mi blog que ha sido testigo del crecimiento que he tenido tanto profesionalmente como personalmente y no quería dejarlo pasar solo así.Las daré en orden cronológico y sin rodeos: la primera,
+<strong>
+&quot;me he casado !!&quot;
+</strong>
+si señores, he contraído el sagrado matrimonio y bajo mi propia voluntad (se que mi ahora esposa estará riendo a carcajadas en esta parte).</p>
+<p><div style="text-align: center">
+<img src="/images/2012/02/marriage.jpg" alt="" title="marriage" class="aligncenter size-full wp-image-2127">
+</div>
+He dado un gran paso en mi vida, decisión que incluso, me atrevo a decirlo, no me costó trabajo. La mujer que he elegido para esposa, siempre ha sido una gran compañera, una mujer entera, dedicada, comprometida y por sobre todo, amorosa. Ella es la mujer que amo y que amaré siempre.</p>
+<p>Les agradezco a todas aquellas personas que, gratamente, nos hicieron el favor de acompañarnos en la celebración de nuestra unión, a quienes nos brindaron su apoyo, y a quienes, aunque no pudieron asistir, sabemos que nos desean mucho éxito. Las cosas van a su paso, los cambios, finalmente son cambios y hay que sobrellevarlos, pero sin dudarlo, puedo decir que es increíble.</p>
+<p>La segunda noticia, que junto con la anterior llena de felicidad mi vida es, que la cigüeña nos ha mandado una carta avisándonos que recibiremos el mejor paquete de nuestras vidas (y no se trata de uno del tipo .deb); si, así es,
+<strong>
+&quot;seremos padres !!&quot;
+</strong>
+.</p>
+<p><div style="text-align: center">
+<img src="/images/2012/02/25-cute-geek-baby-onesies-6-300x300.jpg" alt="" title="25-cute-geek-baby-onesies-6" class="aligncenter size-medium wp-image-2132">
+</div>
+La idea de ser Padre cambia totalmente la perspectiva del hombre, incluye un enorme significado, un camino, y una misión incesante e infinita. Hemos comenzado a visitar a médicos, hacernos estudios, a llevar un control en la alimentación, en la administración de los medicamentos, suplementos y vitaminas que nos han indicado, y sobre todo, constantes ultrasonidos.</p>
+<p>Es inexplicable la sensación de ver crecer vida dentro del vientre de una mujer, como evoluciona, y como puede incluso, reconocer tu voz, o tus caricias a través de su madre.</p>
+<p>Increíble, sumamente increíble, apasionante, fulminante, y aunque trate de buscar palabras que puedan expresar toda esta sensación, es probable que nunca dé con alguna que lo defina completamente. Es un nuevo reto, el mas grande proyecto que he tenido en mi vida.Sin lugar a dudas, este
+<strong>
+2012
+</strong>
+estará lleno de nuevos retos, y nuevas aventuras.</p>
+<p>Estoy completamente agradecido con la vida, y con ese ser con mil nombres al que yo suelo denominar «simplemente dios».</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

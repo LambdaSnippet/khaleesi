@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Video: Yo anulo mi voto</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/video-yo-anulo-mi-voto"/><meta property="og:type" content="website"/><meta property="og:title" content="Video: Yo anulo mi voto"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/video-yo-anulo-mi-voto"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Video: Yo anulo mi voto"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Video: Yo anulo mi voto</h1><time datetime="2009-06-03" class="opening-time">2009-06-03</time></div></header></div><div role="main" class="container"><p style="text-align: justify">
+ Se aproximan las nuevas
+ <a href="http://www2.esmas.com/noticierostelevisa/mexico/032594/el-2009-ano-elecciones-mexico">
+  elecciones este 5 de julio
+ </a>
+ para renovar la cámara de diputados, en donde se elegirán 500 de estos tipos 300 por el principio de mayoría relativa y 200 por representación proporcional. En lo que concierne a Guanajuato, se encuentran en disputa 46 ayuntamientos y se renovaran 36 diputados federales. Y por lo visto, el gasto en campañas publicitarias resulto ser mas
+ <a href="http://www.el-universal.com.mx/nacion/161795.html">
+  caras
+ </a>
+ que las del 2006.
+</p>
+<p style="text-align: justify">
+ En esta ocasión me toco ser funcionario de casilla, y entre una de las platicas que tuvimos como debate antes de empezar los simulacros (que aun las hacemos) fue sobre la gran abstinencia que hay en el país, y vamos que esto es tan comprensible.
+</p>
+<p style="text-align: justify">
+ Al parecer vivimos en un país de promesas incumplidas, y estas baratitas campañas solo pintan muy bonitas las cosas para nada. Hoy al leer
+ <a href="http://linuxman.blogsome.com/2009/06/01/anular-el-voto/">
+  linuxman
+ </a>
+ vi un video llamado
+ <a href="http://www.anulomivoto.com/">
+  &quot;yo anulo mi voto&quot;
+ </a>
+ con el que empatizo, así que te insto a que lo veas:
+</p>
+<p style="text-align: center">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/cWZgM3_q70Q?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> 
+</p>
+<p style="text-align: justify">
+ Así que si estas en las mismas condiciones que yo de no tener o considerar aptos a los candidatos de los partidos politicos para gobernar este pais, no te abstengas de votar, ve y has nulo tu voto, cumple con tu responsabilidad de ciudadano.
+</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Programación en Bash Linux I: Hola mundo</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/programacion-en-bash-linux-i-hola-mundo"/><meta property="og:type" content="website"/><meta property="og:title" content="Programación en Bash Linux I: Hola mundo"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/programacion-en-bash-linux-i-hola-mundo"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Programación en Bash Linux I: Hola mundo"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Programación en Bash Linux I: Hola mundo</h1><time datetime="2009-05-30" class="opening-time">2009-05-30</time></div></header></div><div role="main" class="container"><p style="text-align: justify">
+ Debido a que el lunes presento un examen de sistemas operativos totalmente practico de programación en terminal unix he decidido ponerme a estudiar un poco y que mejor que publicando unos pequeños tutoriales para que se queden aquí por si algún día mas requiero de alguna cosa de estas.
+</p>
+<p style="text-align: justify">
+ Hacia mucho que no programaba en shell, y aunque el curso se centra en sistemas unix, pues optaremos por un sistema de tipo
+ <a href="http://es.wikipedia.org/wiki/Unix">
+  unix
+ </a>
+ (GNU/Linux Debian) y programando sobre
+ <a href="http://es.wikipedia.org/wiki/Bash">
+  bash
+ </a>
+ y no
+ <a href="http://es.wikipedia.org/wiki/Ksh">
+  korn shell
+ </a>
+ como bien la profesora lo pide. ¿por que bash y no ksh? pues por la sencilla razón de que Linux trae por defecto terminales tipo bash y así no tendríamos que instalar ksh. Además, el uso que le daremos no será de gran importancia para optar por ksh.
+</p>
+<p style="text-align: justify">
+ Introducción:
+</p>
+<p style="text-align: justify">
+ Los scripts que podemos programar bajo shell son de gran utilidad para un sin fin de cuestiones, como por ejemplo ahorrarnos el tener que escribir grandes cantidades de comandos para bajar una lista de videos de youtube con sencillas expresiones regulares, buscar archivos, renombrar directorios recursivamente. o hasta posibles
+ <a href="http://es.wikipedia.org/wiki/Exploit">
+  exploits
+ </a>
+ para nuestros ataques mágicos.
+</p>
+<p style="text-align: justify">
+ Usaremos nuestro editor de textos favorito, así que yo propongo &quot;
+ <a href="http://es.wikipedia.org/wiki/Nano_(editor_de_texto)" target="_blank">
+  nano
+ </a>
+ &quot; ya que estamos sobre terminal.
+</p>
+<p style="text-align: justify">
+ Nuestro primer programa:
+</p>
+<p style="text-align: justify">
+ Bien, como estamos acostumbrados:
+</p>
+<pre>
+$nano script01
+</pre>
+<pre lang="bash">
+#!/bin/bash
+echo &quot;Hola mundo&quot;
+</pre>
+<pre>
+$chmod +x script01
+</pre>
+<p style="text-align: justify">
+ Este es nuestro programa al que llamamos script01 (lo creamos con
+ <strong>
+  nano script01
+ </strong>
+ ), le damos permisos de ejecución con
+ <strong>
+  chmod +x script01
+ </strong>
+ , y podremos ejecutarlo con
+ <strong>
+  ./script01
+ </strong>
+ obteniendo una salida como esta:
+</p>
+<pre>
+$./script01
+Hola mundo
+</pre>
+<p style="text-align: justify">
+ Como en todos los lenguajes, en los scripts bash tambien podemos hacer uso de comentarios para documentar nuestros scripts con el caracter #. Tambien podemos notar que en la primer linea del programa script01 empieza con
+ <strong>
+  #!/bin/bash
+ </strong>
+ , que como es tradicional en los scripts nos indica donde se encuentra el interprete. El comando para mandar a pantalla es
+ <strong>
+  echo
+ </strong>
+ como bien lo pudimos notar.
+</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

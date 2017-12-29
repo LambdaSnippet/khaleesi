@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>x2t Proyect (XMMS2 + Twitter)</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/x2t-proyect-xmms2-twitter"/><meta property="og:type" content="website"/><meta property="og:title" content="x2t Proyect (XMMS2 + Twitter)"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/x2t-proyect-xmms2-twitter"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="x2t Proyect (XMMS2 + Twitter)"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">x2t Proyect (XMMS2 + Twitter)</h1><time datetime="2010-02-02" class="opening-time">2010-02-02</time></div></header></div><div role="main" class="container"><div class="twoColumn">
+ En algunas ocasiones se me ha ocurrido &quot;quiero twittear lo que estoy escuchando&quot;, y me refiero a algo automático para que no tenga que escribirlo yo mismo.Así que decidí programar una pequeña aplicación que lo haga, que tenga la bondad de darme a elegir si esta activa o inactiva, o bien establecer el formato en el que deseo que aparezca en twitter; así que hice manos a la obra y comencé a programarlo.La elección del lenguaje como muchos ya se podrán imaginar es Python, por lo que usare el
+ <a href="/articles/2009/programando-un-cliente-xmms2-1">
+  middleware
+ </a>
+ de python-xmmsclient.La
+ <a href="/articles/2009/xmms2">
+  instalación
+ </a>
+ obviamente involucra al servidor XMMS2 y xmmsclient así que podriamos hacerlo simplemente así.
+
+ <pre lang="bash">
+  # apt-get install xmms2 python-xmmsclient
+ </pre>
+
+ Lo interesante aquí es el desarrollo de un
+ <a href="/articles/2009/python-y-xmms2">
+  cliente XMMS2
+ </a>
+ , eficazmente sencillo, aunque encontrar información acerca de la librería puede resultar un poco complicado y al hacerlo es posible que para nuestra elección de lenguaje venga muy incompleta.Pero esto no significa que no logremos adaptarnos fácilmente, es la ventaja de las api&#39;s estandarizadas, así que nuestro primer paso será hacer conexión con el servidor.Una conexión básica con el servidor sería:
+ <pre lang="python">
+#!/usr/bin/env python
+import xmmsclient
+import os
+import sys
+xmms = xmmsclient.XMMS(&quot;miCliente&quot;)
+try:
+    xmms.connect(os.getenv(&quot;XMMS_PATH&quot;))
+except IOError, detail:
+    print &quot;Conexión fallida:&quot;, detail
+    sys.exit(1)
+result = xmms.playback_start()
+result.wait()
+if result.iserror():
+    print &quot;Error al reproducir, %s&quot; % result.get_error()
+else:
+    sys.exit(0)
+ </pre>
+ Como nos podemos dar cuenta, la conexión resulta muy sencilla,
+ <strong>
+  os.getenv(&quot;XMMS_PATH&quot;)
+ </strong>
+ nos devuelve el valor de la variable de entorno, y así nos permite saber si el servidor esta activo o no ya que al no estar corriendo, la variable no existe.Por otro lado, una vez establecida la conexión podemos acceder a las acciones directamente del objeto
+ <strong>
+  xmms
+ </strong>
+ que creamos al iniciar el script, por ello, al ejecutar
+ <strong>
+  xmms.playback_start()
+ </strong>
+ le damos la orden al server de reproducir lo que tenga en cola, aunque no se ejecutará si no hasta haber llamado a
+ <strong>
+  xmms.wait()
+ </strong>
+ .Si por algún motivo no es posible reproducir algo, el objeto xmms arroja los errores (
+ <strong>
+  result.iserror()
+ </strong>
+ ) que ocurrieron y así nosotros podemos controlarlos.Podemos encontrar mas información sobre el desarrollo de clientes XMMS2
+ <a href="http://wiki.xmms2.xmms.se/wiki/Developer_Corner">
+  aqui
+ </a>
+ por si estas interesado en ir mas a fondo, por mi parte trataré de ir con calma documentando lo que estoy desarrollando.Una sugerencia podría ser desarrollar un pequeño engine de nuestro cliente, y así, hacernos la vida mas fácil para próximos desarrollos.
+</div>
+<div class="twoColumn">
+ Hasta esta parte, todo ha ido claro me parece, aun no he tocado el tema de twitter así que ahora veremos algo al respecto.Existen muchas librerías que podemos usar para nuestra aplicación, pero la que me sedujo fácilmente fue
+ <a href="http://code.google.com/p/python-twitter/">
+  python-twitter
+ </a>
+ (chales, eso fue un capumm). Python-Twitter es un proyecto que vienen desarrollando un grupo de developers, y resulta tan intuitiva que usarla será cosa de risa.La librería viene incluida al igual que
+ <strong>
+  python-xmmsclient
+ </strong>
+ en los repos de Debian Lenny.
+ <pre lang="bash">
+  # apt-get install python-twitter
+ </pre>
+ Y su uso es tan sencillo que el siguiente script resultará muy explicativo.
+ <pre lang="python">
+#!/usr/bin/env python
+# -<em>- coding: utf-8 -</em>-
+import twitter
+mytwitter = twitter.Api(&quot;miusuario&quot;,&quot;mipassword&quot;)
+status = mytwitter.PostUpdate(&#39;probando python-twitter&#39;)
+print status.textstatuses = mytwitter.GetUserTimeline()
+for s in statuses:
+    print s.text
+ </pre>
+ Así es, importamos librería, creamos objeto, hacemos una publicación con el texto &quot;probando python-twitter&quot;, imprimimos lo que enviamos, pedimos el Timeline y lo iteramos imprimiendo los textos. Sencillo no ?La documentación completa la podemos ver
+ <a href="http://static.unto.net/python-twitter/0.6/doc/twitter.html">
+  aquí
+ </a>
+ .Con esta información será posible el desarrollo del cliente x2t que tengo en mente, de hecho, he diseñado una pequeña interfaz que solo ocupara un mínimo de opciones como establecer nombre y password de twitter, un filtro el cual me permitirá definir el formato de mis tweets, y si esta activo o no el servicio.Está es por ahora la propuesta.
+ <p style="text-align:center">
+  <a href="/images/2010/02/x2t.png">
+   <img src="/images/2010/02/x2t.png" alt="" title="x2t" class="aligncenter size-full wp-image-1227">
+  </a>
+ </p>
+ Y por lo pronto esto es todo lo que puedo comentar, estaré trabando en este pequeño proyectito por las noches y espero no tardar demasiado en anunciar como ha quedado.
+</div><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

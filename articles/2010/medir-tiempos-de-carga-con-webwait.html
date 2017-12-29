@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Medir tiempos de carga con WebWait</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/medir-tiempos-de-carga-con-webwait"/><meta property="og:type" content="website"/><meta property="og:title" content="Medir tiempos de carga con WebWait"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/medir-tiempos-de-carga-con-webwait"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Medir tiempos de carga con WebWait"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Medir tiempos de carga con WebWait</h1><time datetime="2010-05-07" class="opening-time">2010-05-07</time></div></header></div><div role="main" class="container"><p>Googleando me tope con
+<a href="http://webwait.com/">
+ WebWait
+</a>
+, una aplicación online cual objetivo es medir el tiempo de carga de nuestro sitio web con solo indicarle la dirección, herramienta que puede ser útil a los que cuidamos el ancho de banda que gastamos.Funciona de la siguiente manera: Indicamos la URL del site que queremos probar, el número de ocasiones que la aplicación la llamará, y el intervalo de tiempo que hay entre cada llamada.Esto le permitirá a la aplicación, obtener un promedio de tiempo de carga, una medía y una desviación estandar, información que como developers nos puede servir. Nos permite hacer esto con uno o varios site&#39;s con la finalidad de comparar los tiempos entre ellos.Así que, no solo quise testearlo con mi blog, si no que, también, elegí a varios que me parecieron apropiados a probar, entre ellos el blog de
+<a href="http://twitter.com/ceochronos">
+ @ceochronos
+</a>
+,
+<a href="http://twitter.com/_alanboy">
+ @_alanboy
+</a>
+,
+<a href="http://twitter.com/jafrancov">
+ @jafrancov
+</a>
+, e intencionalmente el sitio oficial del
+<a href="http://www.itc.mx/">
+ Instituto Tecnológico de Celaya
+</a>
+, y el sitio del
+<a href="http://sisinfo.itc.mx/itcdiscli/">
+ departamento de ing. en Sistemas Computacionales y Lic. en Informática
+</a>
+.
+<strong>
+ Probando con:
+</strong></p>
+<p><ul>
+ <li>
+  Numero de llamadas:
+  <strong>
+   5
+  </strong>
+ </li>
+ <li>
+  Intervalo entre llamadas:
+  <strong>
+   5 segundos
+  </strong>
+ </li>
+</ul>
+<strong>
+ Sitios:
+</strong></p>
+<p><ul>
+ <li>
+  <a href="http://twitter.com/ceochronos">
+   @ceochronos
+  </a>
+  :
+  <a href="http://weblog.alejandrogomez.org/">
+   http://weblog.alejandrogomez.org/
+  </a>
+ </li>
+ <li>
+  <a href="http://twitter.com/_alanboy">
+   @_alanboy
+  </a>
+  :
+  <a href="http://alanboy.com/">
+   http://alanboy.com/
+  </a>
+ </li>
+ <li>
+  <a href="http://twitter.com/jafrancov">
+   @jafrancov
+  </a>
+  :
+  <a href="http://jafrancov.com/">
+   http://jafrancov.com/
+  </a>
+ </li>
+ <li>
+  Instituto Tecnológico de Celaya:
+  <a href="http://www.itc.mx/">
+   http://www.itc.mx/
+  </a>
+ </li>
+ <li>
+  Departamento de Ing. en Sistemas y Lic. en Informática:
+  <a href="http://sisinfo.itc.mx/">
+   http://sisinfo.itc.mx/
+  </a>
+ </li>
+ <li>
+  Mi blog:
+  <a href="http://old.jorgeluis.com.mx/">
+   http://lesthack.com.mx
+  </a>
+ </li>
+</ul>
+<strong>
+ Notas:
+</strong></p>
+<p style="padding-left: 30px">
+ Para probar y no poner en ventaja a nadie, limpie el cache completa de Google Chrome e inicie en modo incógnito de tal forma que fuera justa la situación. También hay que resaltar que puede variar según la conexión que tengamos e inclusive el tráfico que exista en la red.
+</p>
+<p style="text-align: left">
+ <strong>
+  Resultados:
+ </strong>
+</p>
+<p style="text-align: center">
+ <img class="aligncenter size-full wp-image-1368" title="webwait" src="/images/2010/05/webwait.png" alt="">
+</p>
+<p style="text-align: center">
+ <img class="aligncenter size-full wp-image-1369" title="table" src="/images/2010/05/table.png" alt="">
+</p>
+<strong>
+ Link:
+</strong>
+<p style="padding-left: 30px">
+ <a href="http://webwait.com/8E">
+  http://webwait.com/8E
+ </a>
+</p>
+<strong>
+ Análisis:
+</strong>
+<p style="padding-left: 30px">
+ Algunos resultados me sorprendieron un poco, pero analicemos con calma.
+</p>
+<p style="padding-left: 30px">
+ Mi blog
+ <a href="http://old.jorgeluis.com.mx/">
+  lesthack.com.mx
+ </a>
+ :
+</p>
+<p style="padding-left: 60px">
+ Con promedio de
+ <strong>
+  1.85s
+ </strong>
+ y una desviación estandar de
+ <strong>
+  0.47s
+ </strong>
+ me indica que el tiempo de carga entre cada una de las llamadas no varió mucho, lo que me alegra, pero, esto se debe al poco contenido que muestro en la página principal (1 post por página), no hago llamadas a otras cosas como algún feed externo, cosa que me ayuda a recuperar mucho de ese tiempo muerto, el diseño de mi sitio realmente carece de imágenes, es limpio, un CSS puro, y con pocos colores.
+</p>
+<p style="padding-left: 60px">
+ Otra ventaja con la que cuento es que genero cache en el servidor mediante un
+ <a href="http://www.google.com.mx/#hl=es&amp;source=hp&amp;q=wp-cache&amp;aq=f&amp;aqi=g3&amp;aql=&amp;oq=&amp;gs_rfai=&amp;fp=a2429e53b00ae87">
+  plugin
+ </a>
+ de wordpress, lo que evita hacer tantas peticiones (consultas, updates o inclusive removes) a la base de datos (MySQL) y por lo tanto, menos procesamiento con php para acomodar toda esa información dinámica, brindando información estática al cliente y solo actualizando cuando sea necesario.
+</p>
+<p style="padding-left: 30px">
+ El blog de
+ <a href="http://twitter.com/ceochronos">
+  @ceochronos
+ </a>
+ (
+ <a href="http://weblog.alejandrogomez.org/">
+  http://weblog.alejandrogomez.org/
+ </a>
+ ):
+</p>
+<p style="padding-left: 60px">
+ Este fue uno de los resultados que mas me sorprendió, ya que, esperaba tuviera un resultado mas óptimo. Este blog, puede decirse que en diseño es mas limpio que el mio ya que no contiene imágenes en su diseño, carga poco CSS, poco javascript, y no hace llamadas a algún sitio externo.
+</p>
+<p style="padding-left: 60px">
+ Los resultados fueron: un promedio de
+ <strong>
+  9.41s
+ </strong>
+ y una desviación de
+ <strong>
+  13.57s
+ </strong>
+ , con lo que podemos darnos cuenta que los cambios entre llamadas si fueron bastante grandes y solo puedo concluir que se debieron a las imágenes que carga. En su primer página muestra 3 posts, y un total de 4 imágenes que pueden tener una calidad tal que generen ese peso. Estas imágenes son depositadas en cache local y evidentemente la segunda llamada sería menos densa al igual que las siguientes.
+</p>
+<p style="padding-left: 60px">
+ Seria interesante hacer un análisis de los sitios ya todos probados al menos una vez y alojando en cache el contenido que creen pertinente para después ahorrar tiempo en carga.
+</p>
+<p style="padding-left: 30px">
+ El site de
+ <a href="http://twitter.com/_alanboy">
+  @_alanboy
+ </a>
+ (
+ <a href="http://alanboy.com/">
+  http://alanboy.com/
+ </a>
+ ):
+</p>
+<p style="padding-left: 60px">
+ Este blog también tiene un diseño muy limpio, nada de diseños complejos y los resultados casi estaba seguro resultarían de este modo.
+</p>
+<p style="padding-left: 60px">
+ Promedio de
+ <strong>
+  4.88s
+ </strong>
+ y una desviación estandar de
+ <strong>
+  3.38s
+ </strong>
+ lo cual indica que entre llamadas si hubo cambios pero no tan considerables.
+</p>
+<p style="padding-left: 60px">
+ Su sitio se compone de llamadas que se generan mediante php, lo que puede retrasar en tiempo la carga, ya que el servidor debe primero procesar el generar el contenido para después enviarlo al cliente, aunque este tiempo no es gran cosa.
+</p>
+<p style="padding-left: 60px">
+ Hace al menos 2 llamadas; una a su blog (blog.alanboy.com) y otra a twitter. También carga algunas imágenes en sus posts, y vemos un video embebido, pero nada que fuese pesado.
+</p>
+<p style="padding-left: 30px">
+ El sitio del ITC (
+ <a href="http://www.itc.mx/">
+  http://www.itc.mx/
+ </a>
+ ):
+</p>
+<p style="padding-left: 60px">
+ En lo particular, el diseño del sitio no me gusta, pero, pues ese es otro tema. Con un promedio de
+ <strong>
+  7.22s
+ </strong>
+ y una desviación estandar de
+ <strong>
+  3.45s
+ </strong>
+ nos muestran que realmente esta pasando algo entre cada llamada. Los cambios entre tiempos de cada llamada no soy muy considerables, pero, los tiempos de carga si lo son.
+</p>
+<p style="padding-left: 60px">
+ El sitio tiene una considerable cantidad de imágenes que carga, y si vemos un poco de su código fuente, nos daremos cuenta que hace una tremenda llamada a archivos CSS y un par de javascripts.
+</p>
+<p style="padding-left: 60px">
+ También es de considerar que el servidor esta montado en las instalaciones del ITC, bajo un ancho de banda brindado por TELMEX y que por si fuera poco, comparte con algunos otros sitios mas.
+</p>
+<p style="padding-left: 30px">
+ El sitio del Departamento (
+ <a href="http://sisinfo.itc.mx/">
+  http://sisinfo.itc.mx/
+ </a>
+ ):
+</p>
+<p style="padding-left: 60px">
+ Como nos podemos dar cuenta, este sitio, subdominio de itc.mx, tiene un bajo promedio (
+ <strong>
+  2.02s
+ </strong>
+ ) y una desviación de
+ <strong>
+  1.57s
+ </strong>
+ , cosa que me sorprendió, ya que, al igual que el sitio del itc, esta bajo la misma infraestructura.
+</p>
+<p style="padding-left: 60px">
+ Es comprensible el bajo promedio debido al poco contenido que tiene, además de ser contenido estático sobre un menú interactivo con javascript.
+</p>
+<p style="padding-left: 30px">
+ El site de
+ <a href="http://twitter.com/jafrancov">
+  @jafrancov
+ </a>
+ (
+ <a href="http://jafrancov.com/">
+  http://jafrancov.com/
+ </a>
+ ):
+</p>
+<p style="padding-left: 60px">
+ Este blog, a diferencia de los otros analizados (incluyendo el mio), tiene un diseño complejo, ya que si cuenta con un poco mas de colorido.
+</p>
+<p style="padding-left: 60px">
+ Promedio:
+ <strong>
+  8.39s
+ </strong>
+ y Desviación:
+ <strong>
+  4.77s
+ </strong>
+ . Los tiempos de carga son largos, hace algunas llamadas como a twitter con los últimos tweets que ha hecho, incluye una considerable cantidad de imágenes, así como incluye un banner dinámico en la parte superior que muestra sus últimos post&#39;s, y una nube de etiquetas en la parte inferior en flash.
+</p>
+<strong>
+ Conclusiones:
+</strong>
+<p style="padding-left: 30px">
+ Como vemos, los factores a considerar son muchos, inclusive un factor muy importante es saber que tan fiable es la aplicación con la que testeamos, el tipo de conexión que tenemos, la infraestructura donde se encuentran alojados los sitios, el ancho de banda con el que cuenta, etc.
+</p>
+<p style="padding-left: 30px">
+ Pero para darnos una idea de los tiempos de carga de nuestro sitio,
+ <a href="http://webwait.com">
+  WebWait
+ </a>
+ puede resultar muy útil.
+</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

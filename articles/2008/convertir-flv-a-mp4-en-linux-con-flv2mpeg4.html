@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Convertir FLV a MP4 en Linux con Flv2Mpeg4</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/convertir-flv-a-mp4-en-linux-con-flv2mpeg4"/><meta property="og:type" content="website"/><meta property="og:title" content="Convertir FLV a MP4 en Linux con Flv2Mpeg4"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/convertir-flv-a-mp4-en-linux-con-flv2mpeg4"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Convertir FLV a MP4 en Linux con Flv2Mpeg4"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+  
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+  
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+  
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Convertir FLV a MP4 en Linux con Flv2Mpeg4</h1><time datetime="2008-09-30" class="opening-time">2008-09-30</time></div></header></div><div role="main" class="container"><p style="text-align: justify">
+ Ayer por la tarde traté de convertir un video del tipo flv que descargamos de youtube al formato mp4 con ffmpeg.
+</p>
+<p style="text-align: justify">
+ Pensé que la cosa sería sencilla, convertir a otros formatos es simple, pero creo que se complico mas de lo que imaginaba.
+</p>
+<p style="text-align: justify">
+ ffmpeg funciona perfecto convirtiendo flv a avi por ejemplo.
+</p>
+
+<pre><code> $ ffmpeg -i video.flv video.avi
+</code></pre><p style="text-align: justify">
+ pero al tratar de hacerlo para mp4 parece no soportar el codec.
+</p>
+
+<pre><code> $ ffmpeg -i video.flv video.mp4
+</code></pre><pre><code> FFmpeg version SVN-rUNKNOWN, Copyright (c) 2000-2007 Fabrice Bellard, et al. configuration: --enable-gpl --enable-pp --enable-swscaler--enable-pthreads --enable-libvorbis --enable-libtheora --enable-libogg--enable-libgsm --enable-dc1394 --disable-debug --enable-shared--prefix=/usr libavutil version: 1d.49.3.0 libavcodec version: 1d.51.38.0 libavformat version: 1d.51.10.0 built on Jul 23 2008 22:38:24, gcc: 4.2.3 (Ubuntu 4.2.3-2ubuntu7)Seems stream 0 codec frame rate differs from container frame rate: 1000.00(1000/1) -&amp;gt; 30.00 (30/1)Input #0, flv, from &#39;Santa Sabina.flv&#39;: Duration: 00:08:02.6, start: 0.000000, bitrate: 64 kb/s Stream #0.0: Video: flv, yuv420p, 320x240, 30.00 fps(r) Stream #0.1: Audio: mp3, 22050 Hz, mono, 64 kb/sOutput #0, mp4, to &#39;video.mp4&#39;: Stream #0.0: Video: mpeg4, yuv420p, 320x240, q=2-31, 200 kb/s, 30.00 fps(c) Stream #0.1: Audio: 0x0000, 22050 Hz, mono, 64 kb/sStream mapping: Stream #0.0 -&amp;gt; #0.0 Stream #0.1 -&amp;gt; #0.1Unsupported codec for output stream #0.1
+</code></pre><p style="text-align: justify">
+ Así que trate de buscar alguna manera de hacerlo, pero no logre nada. Buscando encontré una utilidad llamada
+ <a href="http://sourceforge.net/projects/vixynet/">
+  flv2mpeg4
+ </a>
+ que viene incluida en los repositorios de
+ <a href="http://www.getdeb.net/">
+  getDeb
+ </a>
+ , así que me propuse a bajarla e instalarla.
+</p>
+<p style="text-align: justify">
+ Primeramente debemos instalarnos unas librerías/codecs necesarias para poder hacer las conversiones.
+</p>
+
+<pre><code>$ sudo apt-get install libavcodec-dev libavformat-dev libavutil-de
+</code></pre><p style="text-align: justify">
+ Descargamos flv2mpeg4 desde
+ <a href="http://lesthack.googlepages.com/flv2mpeg4_0svn3-2~getdeb1_i386.deb">
+  aquí
+ </a>
+ , y lo instalamos.
+</p>
+
+<pre><code>$ sudo dpkg -i
+  flv2mpeg4_0svn3-2~getdeb1_i386.deb
+</code></pre><p style="text-align: justify">
+ Listo, ya lo tenemos instalado.
+</p>
+<p style="text-align: justify">
+ Para convertir un video formato flv a mp4 simplemente hacemos
+</p>
+
+<pre><code>$ flv2mpeg4 video.flv video.mp4
+</code></pre><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>
