@@ -55,7 +55,7 @@
   
   window.setInterval(scrobbler, 60000);
   scrobbler();
-//]]></script></head><body><div class="opening"><img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Obtener el último día del mes en PostgreSQL</h1><time datetime="2012-10-29" class="opening-time">2012-10-29</time></div></header></div><div role="main" class="container"><p><em>Últimamente he <a href="/articles/2012/actualizar-serial-de-los-campos-id-en-postgresql">posteado</a> artículos <a href="/articles/2012/como-formatear-una-fecha-string-en-python">muy</a> <a href="/articles/2012/generacion-de-un-password-aleatorio-en-django">cortos</a> con la finalidad de ayudarme a recordar cosas sencillas que en algún momento usé y pueda necesitarlo de nuevo en el futuro, y si existe alguien mas que lo usé también, pues que mejor.
+//]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Obtener el último día del mes en PostgreSQL</h1><time datetime="2012-10-29" class="opening-time">2012-10-29</time></div></header></div><div role="main" class="container"><p><em>Últimamente he <a href="/articles/2012/actualizar-serial-de-los-campos-id-en-postgresql">posteado</a> artículos <a href="/articles/2012/como-formatear-una-fecha-string-en-python">muy</a> <a href="/articles/2012/generacion-de-un-password-aleatorio-en-django">cortos</a> con la finalidad de ayudarme a recordar cosas sencillas que en algún momento usé y pueda necesitarlo de nuevo en el futuro, y si existe alguien mas que lo usé también, pues que mejor.
 </em></p>
 <p>En ocasiones, es necesario dar con el último día de un mes determinado, y aunque pueda parecer algo sencillo, puede complicarse si no conocemos algunas funciones simples de postgresql (pgsql).El código es el siguiente:</p>
 <pre lang="postgresql" style="font-size: 12px">
@@ -68,7 +68,7 @@ LANGUAGE plpgsql;
 </pre>
 
 <p>La función es muy sencilla, recibe año y mes como parametros, los concatena asignándoles el día 1, le suma un mes y le resta finalmente un día. Esto devuelve el último día del mes.</p>
-<p>La función no tiene validaciones, ya que es solo para fines prácticos y demostrativos.</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+<p>La función no tiene validaciones, ya que es solo para fines prácticos y demostrativos.</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/2012/eol-2012-bol-2013-feliz-ano-nuevo" class="post-prev">EOL 2012 - BOL 2013. Feliz Año Nuevo.</a><a href="/articles/2012/generacion-de-un-password-aleatorio-en-django" class="post-next">Generación de un Password aleatorio en Django</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
 
 /* * * DON'T EDIT BELOW THIS LINE * * */
