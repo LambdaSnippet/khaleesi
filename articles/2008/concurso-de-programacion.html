@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><title>Concurso de Programación</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/concurso-de-programacion"/><meta property="og:type" content="website"/><meta property="og:title" content="Concurso de Programación"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/concurso-de-programacion"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Concurso de Programación"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Concurso de Programación</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/concurso-de-programacion"/><meta property="og:type" content="website"/><meta property="og:title" content="Concurso de Programación"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/concurso-de-programacion"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Concurso de Programación"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
 (function() {
   var config = {
     kitId: 'true',
@@ -9,14 +9,14 @@
 //]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
   /* Create a cache object */
   var cache = new LastFMCache();
-  
+
   /* Create a LastFM object */
   var lastfm = new LastFM({
     apiKey    : '17bd7f0d94443f6339322ec910429126',
     apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
     cache     : cache
   });
-  
+
   function scrobbler(){
       lastfm.user.getRecentTracks(
         {
@@ -52,7 +52,7 @@
         }
       );
   }
-  
+
   window.setInterval(scrobbler, 60000);
   scrobbler();
 //]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Concurso de Programación</h1><time datetime="2008-09-05" class="opening-time">2008-09-05</time></div></header></div><div role="main" class="container"><p></p><p style="text-align: justify">
