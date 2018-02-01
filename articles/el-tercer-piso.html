@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>El Tercer Piso</title><meta property="description" content="Después de haber subido escalón por escalón, finalmente he llegado al 'Tercer Piso', ¿hay que celebrarlo, no?. Pero además de celebrarlo, hoy, quiero decir algo."/><meta property="og:description" content="Después de haber subido escalón por escalón, finalmente he llegado al 'Tercer Piso', ¿hay que celebrarlo, no?. Pero además de celebrarlo, hoy, quiero decir algo."/><meta property="og:url" content="http://jorgeluis.com.mx/articles/el-tercer-piso"/><meta property="og:type" content="website"/><meta property="og:title" content="El Tercer Piso"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="og:image" content="http://jorgeluis.com.mx/images/el-tercer-piso.jpg"/><meta property="twitter:image" content="http://jorgeluis.com.mx/images/el-tercer-piso.jpg"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/el-tercer-piso"/><meta property="twitter:card" content="Después de haber subido escalón por escalón, finalmente he llegado al 'Tercer Piso', ¿hay que celebrarlo, no?. Pero además de celebrarlo, hoy, quiero decir algo."/><meta property="twitter:title" content="El Tercer Piso"/><meta property="twitter:description" content="Después de haber subido escalón por escalón, finalmente he llegado al 'Tercer Piso', ¿hay que celebrarlo, no?. Pero además de celebrarlo, hoy, quiero decir algo."/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/el-tercer-piso.jpg" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">El Tercer Piso</h1><time datetime="2016-08-10" class="opening-time">2016-08-10</time></div></header></div><div role="main" class="container"><p>Es interesante como la gente suele estresarse por un concepto numérico al que llamamos edad (¿puedo caer en una paradoja al yo mismo escribir sobre esto?). </p>
+<p>Pero hago este post con la mera finalidad de recordarme a mi mismo, que necesito seguir creciendo sin importar la edad que tenga. Véase al concepto &quot;crecer&quot; en su sentido mas abstracto que involucre aprendizaje, experiencia y corrección de bug&#39;s en la vida.</p>
+<p>Si bien es cierto, conforme envejeces, algunos estragos se hacen presentes. Y no es que me sienta &quot;viejo&quot;, pero he de aceptar, que no tengo la misma resistencia que hace 15 años.</p>
+<p>Hace 15 años era un niñato sentado frente al monitor a las <em>2 am</em> todos los días y todos los días me sentía bien sin pérdida de energía efectuando una cosa y otra. Por supuesto, esto se trata de hábitos, y este es uno de esos que he dejado atrás.</p>
+<p>Las cosas en mi vida hoy en día son diferentes. Tengo una hermosa familia (<em>Mi esposa e hija son mis tesoros mas preciados</em>), y desde que mi hija Dalia nació, cambié el hábito de desvelarme con artefactos electrónicos, ha velar por su bienestar, su salud y su sueño.</p>
+<p>El ser padre, es uno de los <a href="http://old.jorgeluis.com.mx/2012/12/31/eol-2012-bol-2013-feliz-ano-nuevo/">proyectos mas hermosos</a> que la vida me ha regalado. No dejas de <strong>commitear</strong> a cada instante. Aprendes cosas que nunca imaginaste que tendrías que aprender. Y mas importante aun, el <strong>rollback</strong> no existe, por lo que tienes que estar siempre alerta.</p>
+<p>También desarrollas habilidades increíbles, como la posibilidad de hacerte tan pequeño como sea posible, para jugar, correr y reír con ella. Creas nuevas historias y cuentos cada noche, y las cuentas una y otra vez hasta que se quede dormida. Desarrollas la habilidad de creer que todo es posible (algo que pierdes con el tiempo), y te conviertes en el maestro que tiene que enseñarle todo, como el porque llueve, porque nos hacemos viejitos, porque el cielo es azul, porque ya no existen los dinosaurios o por que algunos niños son malos.</p>
+<p>Si, es increíble ser Papá !</p>
+<p>Lo importante que quiero decir pues, es que, deseo nuevamente llegar a escribir un post como este 10 años mas tarde, en donde, me ría de estas palabras y me diga a mi mismo &quot;Era un niñato de 30 años&quot; y tenga nuevas cosas que decir.</p>
+<p>Quiero estar presente aquí 10 años mas tarde; estar presente para ellas el tiempo que la vida me permita seguir viviendo y que espero sea lo suficiente.</p>
+<hr>
+<p style="font-size: 10px">Imagen del Header de <a href="https://pixabay.com/p-862989/?no_redirect">Foundry</a></p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/el-primer-dia" class="post-prev">El primer día</a><a href="/articles/pokemon-go" class="post-next">La revolución Pokemon Go</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

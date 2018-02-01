@@ -7,9 +7,6 @@
 # Scract backups
 *~
 
-# Sublime files
-.sublime-workspace
-
 # Sqlite database
 .sqlite3
 
@@ -23,5 +20,6 @@ sensible.py
 static/*
 
 # documents
-media/documents/
+www/
+
 

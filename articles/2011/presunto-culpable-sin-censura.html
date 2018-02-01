@@ -1,0 +1,133 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Presunto Culpable Sin Censura !</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/presunto-culpable-sin-censura"/><meta property="og:type" content="website"/><meta property="og:title" content="Presunto Culpable Sin Censura !"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/presunto-culpable-sin-censura"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Presunto Culpable Sin Censura !"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Presunto Culpable Sin Censura !</h1><time datetime="2011-03-07" class="opening-time">2011-03-07</time></div></header></div><div role="main" class="container"><div class="oneColumn">
+ <div style="text-align: center">
+  <img src="http://old.jorgeluis.com.mx/wp-content/uploads/2011/03/presunto-culpable1-1.jpg" alt="" title="presunto-culpable1-1" width="480" height="270" class="aligncenter size-full wp-image-1855">
+ </div>
+ Hace unos días publique en
+ <a href="http://www.facebook.com/#!/permalink.php?story_fbid=108453392567968&amp;id=100001242435888">
+  facebook
+ </a>
+ el trailer de esta película de la que
+ <a href="http://www.google.com.mx/search?hl=es&amp;safe=off&amp;biw=1599&amp;bih=725&amp;q=presunto+culpable&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=">
+  tanto se esta hablando
+ </a>
+ por los medios y excesivamente llamo mi atención. Tal vez por el simple hecho de escuchar la palabra &quot;Documental&quot; y &quot;Sistema de Justicia Mexicana&quot; sabía lo que podía encontrar en este film.Mi primer movimiento fue, buscar
+ <a href="http://presuntoculpable.org/">
+  información acerca de ella
+ </a>
+ , ver si se encontraba en
+ <a href="http://cinepolis.com.mx/_CARTELERA/sinopsis.aspx?ip=7569">
+  cartelera
+ </a>
+ (que para mi fortuna y para la zona en la que vivo, aun no lo esta), y buscar algunos
+ <a href="http://www.google.com.mx/search?hl=es&amp;safe=off&amp;biw=1599&amp;bih=725&amp;q=presunto%20culpable&amp;um=1&amp;ie=UTF-8&amp;tbo=u&amp;tbs=vid:1&amp;source=og&amp;sa=N&amp;tab=wv">
+  videos en la web
+ </a>
+ .
+ <div style="text-align: center">
+  <iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/4g8gTGfe4QI?rel=0" frameborder="0" allowfullscreen="allowfullscreen">
+  </iframe>
+ </div>
+ El trailer dice bastante, y escribir sobre la trama es lo de menos en este momento, puedes tomar la iniciativa de
+ <a href="http://www.youtube.com/watch?v=rddrvzDA74Y">
+  mirar la película en Internet
+ </a>
+ , o esperar a que esté disponible en algún cine de tu zona, e inclusive, hasta que exista un DVD de venta, pero por ningún motivo, dejes pasar la oportunidad de verla.
+ <blockquote>
+  <h3>
+   Notas:
+  </h3>
+  Me dí cuenta que la Jueza 12a del Distrito en Materia Administrativa del Distrito Federal, Blanca Lobo,
+  <a href="http://www.sexenio.com.mx/articulo.php?id=2845">
+   determino Censurar
+  </a>
+  el film prohibiendo su proyección, distribución y publicidad por un amparo sin fundamento (¿ Por que no me sorprende ?).Afortunadamente, la inteligencia de una de las autoras abogadas del Film, Layda Negrete, inteligentemente y junto con las empresas Cinepolis y CIDE
+  <a href="http://www.eluniversal.com.mx/notas/749459.html">
+   levantaron la impugna contra la censura
+  </a>
+  , y esperan la resolución para este lunes 7 de Marzo, obteniendo el derecho de transmitir la película hasta no tener una orden judicial.
+ </blockquote>
+ <div style="text-align: center">
+  <img class="center aligncenter size-full wp-image-1836" title="presunto-culpable-aviso" src="http://old.jorgeluis.com.mx/wp-content/uploads/2011/03/presunto-culpable-aviso.jpg" alt="" width="481" height="258" style="text-align:center">
+ </div>
+ <blockquote>
+  Me disculparán si hago referencia a pequeño dialogo del 2do juicio que le concedieron a Toño (Cuando miren la película sabrán de lo que hablo) pero me esta atormentando.- ¿Por qué me acusa? -, pregunta Toño (el presunto culpable) a la Fiscal.- Pus porque es mi chamba -, responde la FiscalQue tremenda estupidez !!
+ </blockquote>
+ « como pueblo, nos estamos levantando muy lento. »
+</div><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/2011/symfony-1-4-javascripts-dinamicos" class="post-prev">Symfony 1.4: Javascript's Dinámicos</a><a href="/articles/2011/debian-6-0-squeeze-ya-esta-aqui" class="post-next">Debian 6.0 Squeeze ya esta aqui !!</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

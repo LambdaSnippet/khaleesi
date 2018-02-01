@@ -1,0 +1,140 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Metas</title><meta property="description" content="No soy de los define propósitos de 'año nuevo', pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, y para ello, tengo algunos tips que pueden ayudar a seleccionar las mejores."/><meta property="og:description" content="No soy de los define propósitos de 'año nuevo', pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, y para ello, tengo algunos tips que pueden ayudar a seleccionar las mejores."/><meta property="og:url" content="http://jorgeluis.com.mx/articles/metas"/><meta property="og:type" content="website"/><meta property="og:title" content="Metas"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="og:image" content="http://jorgeluis.com.mx/images/metas.jpg"/><meta property="twitter:image" content="http://jorgeluis.com.mx/images/metas.jpg"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/metas"/><meta property="twitter:card" content="No soy de los define propósitos de 'año nuevo', pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, y para ello, tengo algunos tips que pueden ayudar a seleccionar las mejores."/><meta property="twitter:title" content="Metas"/><meta property="twitter:description" content="No soy de los define propósitos de 'año nuevo', pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, y para ello, tengo algunos tips que pueden ayudar a seleccionar las mejores."/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/metas.jpg" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">Metas</h1><time datetime="2017-11-30" class="opening-time">2017-11-30</time></div></header></div><div role="main" class="container"><p>El fin de año está cerca, y la mayoría se encuentra cerrando ciclos o proyectos, y tal vez, los mas precavidos, comienzan a planear los nuevos retos o metas para el siguiente año.</p>
+<p>Como <a href="/articles/return">ya lo había dicho antes</a>, no soy de los define propósitos de &quot;año nuevo&quot;, pero si que tiendo a proponerme metas (no importando la fecha) ya sean personales o de ámbito laboral, que van desde terminar una cantidad <strong>X</strong> de libros al año, hasta ver un listado <strong>Y</strong> películas o series.</p>
+<p>Pero hablando mas seriamente de Metas, existe un alto porcentaje de fracasos en su ejecución completa, y creo que mucho se debe al mal planteamiento que tienen.</p>
+<p>Una meta mal planteada muy posiblemente no podrá medirse, y si una meta no se puede medir, es inútil.</p>
+<p>Como contexto, en la empresa donde laboro, ya habíamos pasado por varias etapas en las que se trataban de implementar herramientas que nos ayudarán a definirlas, seleccionarlas y medirlas. Entre estas herramientas se encontraban los <a href="https://es.wikipedia.org/wiki/OKR">OKR&#39;s</a>. Pero, no ayudó mucho el énfasis en la importancia de éstas y fracasaron.</p>
+<p>Sin embargo, hace tiempo, mi jefe me compartió <a href="https://hbr.org/product/hbr-tools-goal-setting/TLGOAL-ZIP-ENG">un articulo</a> muy interesante que nos permitió definir (a modo de herramienta), como establecer metas efectivas de forma muy simple.</p>
+<p>En ese momento me pareció tan bueno el articulo, que hice un resumen que pudiera compartirles a mis colaboradores.</p>
+<h2>Exprimiendo <a href="https://hbr.org/product/hbr-tools-goal-setting/TLGOAL-ZIP-ENG">HBR Tools: Goal Setting</a> de <a href="https://www.groteconsulting.com/us/dick-grote/">Dick Grote</a></h2><p>La forma de establecer metas deberá ser meramente a consideración del responsable. Debe ser capaz de ver el alcance e impacto que está tendrá si se logra, por lo que, simplemente Grote nos ayuda un poco a seleccionarlas y formalizarlas.</p>
+<style>
+h3 {
+    margin: 20px 0px;
+}
+</style>
+
+<h3>¿ Cuantas y cómo seleccionarlas ?</h3><ol>
+<li>Cada persona no deberá de establecer más de 3 metas. Probablemente mas perjudicará la productividad del todo el trabajo.</li>
+<li>Las metas fáciles de alcanzar no inspiran, las metas deberán ser un reto. También hay que ser realistas y no proponerse metas imposibles.</li>
+<li>Las metas van mas allá de las responsabilidades normales. No vale lo que ya haces de forma rutinaria.</li>
+<li>Fijar periodos cortos de tiempo (Si una meta cuesta más de 3 meses, es una meta grande), en ese caso, habrá que dividirla.</li>
+<li>Las metas deberán comenzar con la acción de un verbo y un resultado clave identificable. Ejemplo: “Reducir el número de quejas de clientes a un 6%”</li>
+</ol>
+<h3>¿ Como saber que metas establecer ?</h3><ol>
+<li>Aquellas enfocadas a la estrategia de la empresa primero. Una empresa incluso puede ser tu hogar.</li>
+<li>Aquellas que van orientadas a los planes y estrategias de tu equipo. En casa, el equipo puede estar dividido en cada individuo.</li>
+</ol>
+<h3>Sugerencias para ayudar a determinas metas</h3><ol>
+<li>Comentar o sugerir previamente:<ol>
+<li>¿ Cuales son las áreas específicas donde se necesita atención ?</li>
+<li>¿ Cuales son las áreas que consideras deben prestarse más atención en el futuro próximo ?</li>
+</ol>
+</li>
+<li>Problemas de organización y oportunidades:<ol>
+<li>Cada individuo puede ver probablemente áreas donde el puede hacer mejoras. Él mismo puede detectar dónde puede haber una mejora o corrección.</li>
+</ol>
+</li>
+<li>Desarrollo personal e intereses personales:<ol>
+<li>¿Qué habilidades quiere desarrollar? ¿Qué es lo que le apasiona?</li>
+</ol>
+</li>
+<li>Responsabilidades clave de trabajo:<ol>
+<li>Estas pueden servir para determinar una meta global.</li>
+</ol>
+</li>
+</ol>
+<h3>Pasos para establecer meta:</h3><p>Si eres líder de un equipo, puedes ayudar a tus colaboradores a establecer metas en conjunto. Para ello, puedes seguir lo siguiente:</p>
+<ol>
+<li>Explicar el establecimiento de metas con los siguientes puntos:<ol>
+<li>Se debe estar en acuerdo mutuo en la definición de las metas</li>
+<li>Hacer saber cuales son las metas efectivas</li>
+<li>Tener en cuenta donde se va a establecer la meta, compartir la estrategia de la empresa/departamento. Ver el “Como saber que metas establecer”</li>
+<li>Conocer el formato y entenderlo completamente</li>
+<li>Pedirle que envíe un proyecto de metas, usando un formato determinado, y revisarlo juntos para finalizar las metas.</li>
+</ol>
+</li>
+<li>Desarrollar un borrador de metas</li>
+<li>Revisar metas antes de reunirse</li>
+<li>Reunirse para establecer las metas</li>
+<li>Pedirle directamente el formato</li>
+<li>Aprobar el plan</li>
+</ol>
+<p>Considera que el monitoreo de las metas deberá ser la pauta para darse cuenta si van destinadas al éxito o al fracaso. Al final, evalúate sin trampas.</p>
+<hr>
+<p style="font-size: 10px">Imagen del Header de <a href="https://unsplash.com/photos/fMD_Cru6OTk">Cathryn Lavery</a></p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/diciembre" class="post-prev">Diciembre</a><a href="/articles/la-primer-carta" class="post-next">La primer carta</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

@@ -1,0 +1,90 @@
+#!/bin/bash
+OPCIONES="VerArchivo BorrarArchivo RenombrarArchivo VerDirectorio BorrarDirectorio Salir"
+select opt in $OPCIONES; do
+	case $opt in
+		"VerArchivo")
+			read -p "Archivo: " FILE
+			if test -e $FILE; then
+				if test -f $FILE; then
+					cat $FILE
+				else
+					echo "No es un archivo."
+				fi
+			else
+				echo "El archivo no existe."
+			fi
+			;;
+		"BorrarArchivo")
+			read -p "Archivo: " FILE
+			if test -e $FILE; then
+				if test -f $FILE; then
+					if test -r $FILE -a -w $FILE; then
+						rm $FILE
+						echo "Archivo borrado satisfactoriamente."
+					else
+						echo "Permisos insuficientes para borrarlo."
+					fi
+				else
+					echo "No es un archivo."
+				fi
+			else
+				echo "El archivo no existe."
+			fi
+			;;
+		"RenombrarArchivo")
+			read -p "Archivo: " FILE
+			if test -e $FILE; then
+				if test -f $FILE; then
+					if test -r $FILE -a -w $FILE; then
+						read -p "Nuevo Nombre: " NFILE
+						mv $FILE $NFILE
+					else
+						echo "Permisos insuficientes para renombrarlo."
+					fi
+				else
+					echo "No es un archivo."
+				fi
+			else
+				echo "El archivo no existe."
+			fi
+			;;
+		"VerDirectorio")
+			read -p "Archivo: " DIR
+			if test -e $DIR; then
+				if test -d $DIR; then
+					if test -r $DIR; then
+						ls -l $DIR
+					else
+						echo "No tiene permisos para ver el directorio."
+					fi
+				else
+					echo "No es un directorio."
+				fi
+			else
+				echo "El archivo no existe."
+			fi
+			;;
+		"BorrarDirectorio")
+			read -p "Archivo: " DIR
+			if test -e $DIR; then
+				if test -d $DIR; then
+					if test -r $DIR -a -w $DIR; then
+						rm -R $DIR
+						echo "Directorio borrado satisfactoriamente."
+					else
+						echo "No tiene permisos para ver el directorio."
+					fi
+				else
+					echo "No es un directorio."
+				fi
+			else
+				echo "El archivo no existe."
+			fi
+			;;
+		"Salir")
+			echo "Byb Bye"
+			exit 0
+			;;
+	esac
+done
+

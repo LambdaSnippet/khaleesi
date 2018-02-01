@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>2do Aniversario de codeplasticlesthack</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/2do-aniversario-de-codeplasticlesthack"/><meta property="og:type" content="website"/><meta property="og:title" content="2do Aniversario de codeplasticlesthack"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/2do-aniversario-de-codeplasticlesthack"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="2do Aniversario de codeplasticlesthack"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">2do Aniversario de codeplasticlesthack</h1><time datetime="2009-08-22" class="opening-time">2009-08-22</time></div></header></div><div role="main" class="container"><p style="text-align: center">
+ <a href="/images/2009/08/codeplastic09.png">
+  <img class="aligncenter size-full wp-image-977" title="codeplastic09" src="/images/2009/08/codeplastic09.png" alt="codeplastic09">
+ </a>
+</p>
+<p style="text-align: justify">
+ Así es, este blog ya cumple sus 2 añitos y se que no he sido muy constante pero hago lo que puedo. Así que pues no tengo mas que agradecer a los pocos lectores de mi blog, aquellos que se han interesando un poco en mis pequeños proyectos, en mis intereses, y que así mismo se dan un espacio de su valioso tiempo para comentar.
+</p>
+<p style="text-align: justify">
+ El blog lo empecé cerca del 22 de Agosto, programándolo a manita, tenía un diseño algo
+ <a href="http://old.jorgeluis.com.mx/2008/06/29/nuevo-diseno/">
+  negruzco
+ </a>
+ , pero que carecía de artilugios que fácilmente puedo incluir con su suplente, un blog wordpress que hasta la fecha me ha dejado muy satisfecho.
+</p>
+<p style="text-align: justify">
+ A lo largo de estos 2 años, han pasado muchas cosas, y la idea era tener una bitácora de utilerías que yo mismo confeccionara, por eso el nombre &quot;codeplastic&quot;, queriendo expresar el moldear el código como plastilina, a mi antojo y cambiarlo si en algún momento lo quisiera.
+</p>
+<p style="text-align: justify">
+ Por hoy, el blog sigue en pie, aunque a ratos se cae, pero la filosofía se mantiene aun viva, y espero continuar no prometiendo ser muy constante, pero si, no abandonado este mi querido blog.
+</p>
+<p style="text-align: center; font-size:20px">
+ <strong>
+  Gracias a todos por estos 2 años de blogueo.
+ </strong>
+</p><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/2009/concursos-de-programacion-de-acm-en-el-iteso" class="post-prev">Concursos de Programación de ACM en el ITESO</a><a href="/articles/2009/968" class="post-next">968</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

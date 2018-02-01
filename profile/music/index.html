@@ -1,0 +1,94 @@
+<html><head><meta charset="utf-8"/><title>Jorge Hernández.</title><meta property="description" content="Soy un programador (de la old school), forjado desde los 15 años, autodidacta, curioso, y siempre presente de una u otra forma en Internet."/><meta property="og:description" content="Soy un programador (de la old school), forjado desde los 15 años, autodidacta, curioso, y siempre presente de una u otra forma en Internet."/><meta property="og:url" content="http://jorgeluis.com.mx"/><meta property="og:type" content="website"/><meta property="og:image" content="http://jorgeluis.com.mx/images/about.jpg"/><meta property="og:title" content="Jorge Hernández."/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script><link rel="stylesheet" href="/css/hacks.css"/><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script></head><body><div role="main" class="container"><script>$(function(){
+    var d = new Date();
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var rand = d.getFullYear() + "" + (d.getMonth()+1) + "" + d.getDate();
+    var json_url = "https://raw.githubusercontent.com/lesthack/dailyupdate/master/music/albums.json?r=" + rand;
+    var size = 200;
+    var max_size = 130;
+    var sub_size = 5;
+    var div_albums = $("#topalbums");
+    var div_month = $("#month");
+        div_month.text(monthNames[d.getMonth()]);
+    $.ajax({
+        url : json_url,
+        jsonp : 'callback',
+        dataType : 'text',
+        data : {
+        },
+        success : function(text_response) {
+            var json_response = JSON.parse(text_response);
+            for(var i=0; i < json_response.topalbums.length; i++){
+                if(json_response.topalbums[i].image){
+                    var div_img = $("<a/>")
+                        .attr("class", "cover")
+                        .attr("style", "width: " + size + "px; height: " + size + "px; background-size: " + size + "px " + size + "px; background-image: url(data:image/png;base64," + json_response.topalbums[i].image + ");")
+                        .attr("href", json_response.topalbums[i].url)
+                        .attr("title", json_response.topalbums[i].artist + " - " + json_response.topalbums[i].album)
+                        .attr("target", "_blank");
+                    div_albums.append(div_img);
+                    
+                    if(size > max_size){
+                        size -= sub_size;
+                    }
+                }
+            }
+        }
+    });
+})</script><h1><span id="month"></span><span>&nbsp;Music</span></h1><div class="current"><a id="last-fm" style="display: none" href="#" target="_blank" class="tlast-fm"><img src="/images/attachments/equalizer.gif" id="equalizer" class="equalizer"><img id="cover" class="cover"><div id="info" class="info"><p id="song" class="song"></p><p id="artist" class="artist"></p></div></a></div><div id="topalbums"></div><div id="info"><p style="font-size: 10px"><a href="https://www.last.fm/user/lesthack/listening-report/week">Music Profile Complete</a></p></div></div></body></html>

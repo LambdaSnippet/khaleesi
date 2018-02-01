@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Aprendiendo Django [IV] :: Recomendaciones</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/aprendiendo-django-iv-recomendaciones"/><meta property="og:type" content="website"/><meta property="og:title" content="Aprendiendo Django [IV] :: Recomendaciones"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/aprendiendo-django-iv-recomendaciones"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Aprendiendo Django [IV] :: Recomendaciones"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Aprendiendo Django [IV] :: Recomendaciones</h1><time datetime="2011-08-04" class="opening-time">2011-08-04</time></div></header></div><div role="main" class="container"><p>Finalmente, y debido a que no quiero comprometerme a seguir activo el hilo de &quot;<a href="http://old.jorgeluis.com.mx/?s=aprendiendo+django">Aprendiendo Django</a>&quot; por cuestiones ya muy comentadas (tiempo mas que nada), publicaré las lecturas que sigo en mi aventura como recomendación.Hay bastante material de buena calidad en la red, sin embargo, las lecturas que voy a enlistar, son a mi forma de ver, las adecuadas para el comienzo.</p>
+<ol>
+<li>
+<b>
+<a href="http://www.djangobook.com/">
+ Django Book
+</a>
+</b>
+: Considero que es una lectura obligada para todo principiante en el mundo django (en esta fase me encuentro). El material se encuentra tanto en formato web, como en formato pdf.
+</li>
+<br>
+<li>
+<b>
+<a href="https://docs.djangoproject.com/en/1.3/">
+ Django Documentation
+</a>
+</b>
+: La documentación es el segundo paso a dar, profundiza en temas mas detalladamente, resuelve nuestras dudas, y nos brinda todo el soporte que queramos.
+</li>
+<br>
+<li>
+<b>
+<a href="http://www.amazon.com/Pro-Django-Experts-Voice-Development/dp/1430210478">
+ Pro Django
+</a>
+</b>
+: El contenido de este libro es muy apetecible, nos induce desde temas básicos, hasta temas profundos como web services, escalabilidad de un aplicación, o herramientas externas que podemos combinar.
+</li>
+<br>
+<li>
+<b>
+<a href="http://www.amazon.com/Practical-Django-Projects-Pratical/dp/1590599969">
+ Practical Django Proyects
+</a>
+</b>
+: Muchos de nosotros estamos acostumbrados a aprender jugando y practicando. Este libro nos muestra de forma muy práctica como crear una aplicación, desde lo mas básica, hasta algo ya mas completo y complejo, tomando como proyecto base, la creación de un CMS o un Blog. Ademas de mostrarnos las buenas practicas de desarrollo que los expertos recomiendan.
+</li>
+<br>
+<li>
+<b>
+<a href="http://www.amazon.com/Django-Template-Development-Scott-Newman/dp/1847195709">
+ Django 1.0 Template Development
+</a>
+</b>
+: Los templates en django son tan completos y extensos, que abarcar el tema en un libro genérico es algo complicado. Django Template Development nos da un preámbulo mas amplio del uso de los templates.
+</li>
+<br>
+</ol>
+Con esto ya podemos darnos una buena empapada en el framework.Puedes consultar los post&#39;s anteriores para comenzar.
+<ol>
+<li>
+<a href="http://old.jorgeluis.com.mx/2010/11/12/aprendiendo-django-i/">
+Aprendiendo Django [I]
+</a>
+</li>
+<li>
+<a href="http://old.jorgeluis.com.mx/2010/11/25/aprendiendo-django-ii/">
+Aprendiendo Django [II] :: Hola mundo
+</a>
+</li>
+<li>
+<a href="http://old.jorgeluis.com.mx/2011/08/03/aprendiendo-django-iii-el-proyecto/">
+Aprendiendo Django [III] :: El proyecto
+</a>
+</li>
+</ol><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/2011/software-freedom-day-guanajuato" class="post-prev">Software Freedom Day Guanajuato</a><a href="/articles/2011/aprendiendo-django-iii-el-proyecto" class="post-next">Aprendiendo Django [III] :: El proyecto</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

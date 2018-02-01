@@ -1,0 +1,161 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>Comando Split en linux :: Dividir archivos</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/comando-split-en-linux-dividir-archivos"/><meta property="og:type" content="website"/><meta property="og:title" content="Comando Split en linux :: Dividir archivos"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/comando-split-en-linux-dividir-archivos"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="Comando Split en linux :: Dividir archivos"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title opening-title--long">Comando Split en linux :: Dividir archivos</h1><time datetime="2010-08-15" class="opening-time">2010-08-15</time></div></header></div><div role="main" class="container"><div class="twoColumn">
+ En ocasiones surge el problema de limitar a cierto tamaño los archivos para hacer alguna cosa en particular, y para ello existen varias opciones. Ya recordarán un programa muy famoso llamado
+ <a href="http://www.ica-peru.com/index00.htm">
+  Hacha
+ </a>
+ (que aun hoy se sigue utilizando), que nos permitía dividir un archivo en varios, estableciendo el tamaño máximo que debía tener cada archivo, o bien, en cuantos archivos querías dividirlo.En linux contamos con una pequeña herramienta que por default, viene instalada. Se trata del comando split. Para dividir un archivo en varios de tamaño de 10 mb, sería de la siguiente manera.
+ <pre lang="bash">
+  $ split -b10m archivo
+ </pre>
+ Y el resultado serían varios archivos nombrados como &quot;aa&quot;, &quot;ab&quot;, etc. Aunque podemos establecer algún prefijo.
+ <pre lang="bash">
+  $ split -b10m -d archivo archivo. --verbose
+ </pre>
+ Los archivos resultantes tendrán prefijo numérico esta vez, además que verías un poco mas el proceso con
+ <code>
+  --verbose
+ </code>
+ .
+ <pre lang="bash">
+  Salida:
+  archivo.00 archivo.01 archivo.02 archivo.03
+ </pre>
+</div>
+<div class="twoColumn">
+ <h3>
+  Ayuda de Split
+ </h3>
+ <pre lang="bash">
+ Usage: split [OPTION]... [FILE [PREFIX]]
+ Output pieces of FILE to PREFIXaa, PREFIXab, ...;
+ default size is 1000 lines, and default PREFIX is &#39;x&#39;.
+
+ With no FILE, or when FILE is -, read standard input.
+
+ Mandatory arguments to long options are mandatory for short options too.
+   -a, --suffix-length=N   generate suffixes of length N (default 2)
+       --additional-suffix=SUFFIX  append an additional SUFFIX to file names
+   -b, --bytes=SIZE        put SIZE bytes per output file
+   -C, --line-bytes=SIZE   put at most SIZE bytes of records per output file
+   -d                      use numeric suffixes starting at 0, not alphabetic
+       --numeric-suffixes[=FROM]  same as -d, but allow setting the start value
+   -e, --elide-empty-files  do not generate empty output files with &#39;-n&#39;
+       --filter=COMMAND    write to shell COMMAND; file name is $FILE
+   -l, --lines=NUMBER      put NUMBER lines/records per output file
+   -n, --number=CHUNKS     generate CHUNKS output files; see explanation below
+   -t, --separator=SEP     use SEP instead of newline as the record separator;
+                             &#39;\0&#39; (zero) specifies the NUL character
+   -u, --unbuffered        immediately copy input to output with &#39;-n r/...&#39;
+       --verbose           print a diagnostic just before each
+                             output file is opened
+       --help     display this help and exit
+       --version  output version information and exit
+
+ The SIZE argument is an integer and optional unit (example: 10K is 10<em>1024).
+ Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+ CHUNKS may be:
+   N       split into N files based on size of input
+   K/N     output Kth of N to stdout
+   l/N     split into N files without splitting lines/records
+   l/K/N   output Kth of N to stdout without splitting lines/records
+   r/N     like &#39;l&#39; but use round robin distribution
+   r/K/N   likewise but only output Kth of N to stdout
+
+ GNU coreutils online help: <a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>
+ Full documentation at: <a href="http://www.gnu.org/software/coreutils/split">http://www.gnu.org/software/coreutils/split</a>
+ or available locally via: info &#39;(coreutils) split invocation&#39;
+ </em></pre>
+ <b>
+  Actualización: 14 de Octubre del 2010
+ </b>
+ La unión de los archivos generados por
+ <code>
+  split
+ </code>
+ se realiza mediante
+ <code>
+  cat
+ </code>
+ .
+ <pre lang="bash">
+  cat archivo. &gt; archivo
+ </pre>
+</div><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/2010/real-programmers" class="post-prev">Real Programmers</a><a href="/articles/2010/y-tu-eres-linuxero-tuxteno-podcast" class="post-next">Y tu, eres linuxero ? :: Tuxteno Podcast</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>

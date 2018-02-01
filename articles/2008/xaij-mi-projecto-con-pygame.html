@@ -1,0 +1,132 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><title>xAiJ :: mi projecto con pygame</title><meta property="description" content=""/><meta property="og:description" content=""/><meta property="og:url" content="http://jorgeluis.com.mx/articles/xaij-mi-projecto-con-pygame"/><meta property="og:type" content="website"/><meta property="og:title" content="xAiJ :: mi projecto con pygame"/><meta property="og:site_name" content="Jorge Hernández Blog"/><meta property="twitter:url" content="http://jorgeluis.com.mx/articles/xaij-mi-projecto-con-pygame"/><meta property="twitter:card" content=""/><meta property="twitter:title" content="xAiJ :: mi projecto con pygame"/><meta property="twitter:description" content=""/><meta name="author" content="Jorge Hernández"/><meta name="handheldfriendly" content="true"/><meta name="mobileoptimized" content="320"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="cleartype" content="on"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><meta rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml"/><link rel="stylesheet" href="/css/application.css"/><link rel="shortcut icon" href="/images/favicon.ico"/><script>//<![CDATA[
+(function() {
+  var config = {
+    kitId: 'true',
+    scriptTimeout: 1500
+  };
+  var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+})();
+//]]></script><script type="text/javascript" src="/js/lastfm.api.cache.js"></script><script type="text/javascript" src="/js/lastfm.api.md5.js"></script><script type="text/javascript" src="/js/lastfm.api.js"></script><script>//<![CDATA[
+  /* Create a cache object */
+  var cache = new LastFMCache();
+
+  /* Create a LastFM object */
+  var lastfm = new LastFM({
+    apiKey    : '17bd7f0d94443f6339322ec910429126',
+    apiSecret : 'dbfbc34cdff30a64e2dac071272d5ac4',
+    cache     : cache
+  });
+
+  function scrobbler(){
+      lastfm.user.getRecentTracks(
+        {
+          user: 'lesthack', 
+          limit: '1'
+        }, 
+        {
+          success: function(data){
+            var lfdiv = document.getElementById('last-fm');
+            var track = null;
+            if(Array.isArray(data.recenttracks.track)){
+              track = data.recenttracks.track[0];
+              var lfsong = document.getElementById('song');
+              var lfartist = document.getElementById('artist');
+              var lfcover = document.getElementById('cover');
+                  lfsong.innerHTML = track.name;
+                  lfartist.innerHTML = track.artist['#text'];
+                  if(track.image[0]["#text"]!=""){
+                      lfcover.src = track.image[0]["#text"];
+                      lfcover.className = 'cover';
+                  }
+                  else{
+                      lfcover.src = '';
+                      lfcover.className = 'no-cover';
+                  }
+                  lfdiv.href = track.url;
+                  lfdiv.style.display = '';
+            }
+            else{
+                  lfdiv.style.display = 'display: none;';
+            }
+          }
+        }
+      );
+  }
+
+  window.setInterval(scrobbler, 60000);
+  scrobbler();
+//]]></script></head><body><div class="opening"> <img src="/images/default.gif" alt="" class="opening-image"/><header class="opening-header"><div class="container"><a href="/" class="opening-return">Home</a><h1 class="opening-title">xAiJ :: mi projecto con pygame</h1><time datetime="2008-12-22" class="opening-time">2008-12-22</time></div></header></div><div role="main" class="container"><div class="oneColumn">
+ <p style="text-align: justify">
+  Cada vez que termina un semestre siempre presento ante ustedes algunos de mis proyectos que realice durante el curso, en este caso del semestre Ago-Dic 08 que para mi es el Séptimo de la Carrera de ISC (Ingeniería en Sistemas Computacionales) en el
+  <a href="http://www.itc.mx/" target="_blank">
+   ITC
+  </a>.
+ </p>
+ <p style="text-align: justify">
+  xAiJ es un juego desarrollado en
+  <a href="/articles/2008/python-introduccion" target="_blank">
+   python
+  </a>
+  con la ayuda de
+  <a href="/articles/2008/documentacion-pygame" target="_blank">
+   pygame
+  </a>
+  en el IDE de Eclipse con su respectivo plugin
+  <a href="http://pydev.sourceforge.net/" target="_blank">
+   PyDev
+  </a>
+  que me sirvió para presentar en la materia de
+  <a href="http://sisinfo.itc.mx/itcdiscli/reticulas/retisc04/sem6/graficacion_ISC.pdf" target="_blank">
+   Graficación
+  </a>
+  .
+ </p>
+ <p style="text-align: justify">
+  xAiJ no es mas que un juego en 2D simple, sencillo y fácil de entender, ya que es el clásico juego del rompe pelotas como se muestran en las imágenes.
+ </p>
+ <p style="text-align: center">
+  <a href="/images/2008/12/image3.png">
+   <img class="aligncenter size-medium wp-image-857" title="image3" src="/images/2008/12/image3-300x233.png" alt="image3">
+  </a>
+  <a href="/images/2008/12/image6.png">
+   <img class="aligncenter size-medium wp-image-858" title="image6" src="/images/2008/12/image6-300x233.png" alt="image6">
+  </a>
+ </p>
+ <p style="text-align: center">
+  <a href="/images/2008/12/image9.png">
+   <img class="aligncenter size-medium wp-image-859" title="image9" src="/images/2008/12/image9-300x233.png" alt="image9">
+  </a>
+ </p>
+ <p style="text-align: justify">
+  Los sonidos son tomados de proyectos similares liberados como Software Libre por lo que pongo a disposición de todos ustedes para quien quiera probarlo, modificarlo, mejorarlo (por que aun tiene muchos errores), compartirlo, etc. este sencillo proyecto esperando que a alguien le pudiese servir.
+ </p>
+ <h4>
+  Actualización (28/11/2011)
+ </h4>
+ <p>
+  Nuevo Repo:
+  <a href="https://github.com/lesthack/Game-xAiJ">
+   https://github.com/lesthack/Game-xAiJ
+  </a>
+ </p>
+</div><p class="by"> <a href="http://jorgeluis.com.mx">Jorge Hernandez :: http://jorgeluis.com.mx</a></p><!--2007-2012--><!--2017-Present--><ol class="post-nav"><a href="/articles/2008/cambiar-entre-versiones-de-java-linux" class="post-prev">Cambiar entre versiones de java :: Linux</a><a href="/articles/2008/retos-secuencia-pi-b0" class="post-next">Retos: Secuencia [B:0]</a></ol></div><div class="comments"><div class="container"><div id="disqus_thread"></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeluis-com-mx'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><noscript><p>Please enable JavaScript to view the comments.</p></noscript></div></div><footer role="contentinfo" class="footer"><p><a href="/about">about</a> | <a href="/articles">archives</a> | <a href="/Papers">papers</a> | <a href="/profile/music/">music</a></p></footer></body><script>var disqus_shortname = 'jorgeluis-com-mx';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54256720-1', 'auto');
+ga('send', 'pageview');</script></html>
