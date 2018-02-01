@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Jorge Hernández.</title><link>http://jorgeluis.com.mx</link><description>Blog, hacks, and freaks.</description><atom:link href="http://jorgeluis.com.mx/feed.xml" rel="self" type="application/rss+xml"></atom:link><!-- 2007-2012--><href>= "/articles/" + article.slug</href><item><title>Diciembre</title><description><![CDATA[ <img src="/images/diciembre.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>No había encontrado el momento ideal para escribir sobre lo ocurrido, incluso, aun no estoy seguro de si lo es, pero siento una insoportable necesidad de exteriorizarlo de alguna forma.</blockquote> ]]><![CDATA[<p>Diciembre, fuiste terrible, y no tuviste compasión.</p>
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel> <title>Jorge Hernández.</title><link>http://jorgeluis.com.mx</link><description>Blog, hacks, and freaks.</description><atom:link href="http://jorgeluis.com.mx/feed.xml" rel="self" type="application/rss+xml"></atom:link><!-- 2007-2012--><href>= "/articles/" + article.slug</href><item><title>Resumen 2017</title><description><![CDATA[ <img src="/images/resumen-2017.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>Mi resumen 2017. Y tu, ¿Qué tan productivo fuiste?, ¿Usas métricas?</blockquote> ]]><![CDATA[<p>Aquí mi resumen del año.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">2017 fue un año para mi, de menos fierros y mas cuestiones admon (Administrar, estructurar, documentar, monitorear, etc). Lo cual no significa que fui menos productivo, si no que destiné mi tiempo a cosas que antes no me eran tan comunes. <a href="https://twitter.com/rescuetime?ref_src=twsrc%5Etfw">@rescuetime</a><a href="https://t.co/VJ1LsyxOLV">https://t.co/VJ1LsyxOLV</a> <a href="https://t.co/TPVUh9nytX">pic.twitter.com/TPVUh9nytX</a></p>&mdash; Jorge Hernández (@lesthack) <a href="https://twitter.com/lesthack/status/951524640702124032?ref_src=twsrc%5Etfw">January 11, 2018</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">Este año dejé de usar <a href="https://twitter.com/todoist?ref_src=twsrc%5Etfw">@todoist</a> para centrarme mas en usar correctamente Bullet Journal. Y si, se nota bastante en mis estadísticas. <a href="https://t.co/txhZtgqY2i">https://t.co/txhZtgqY2i</a> <a href="https://t.co/QKeEJYXsMq">pic.twitter.com/QKeEJYXsMq</a></p>&mdash; Jorge Hernández (@lesthack) <a href="https://twitter.com/lesthack/status/951522515750236161?ref_src=twsrc%5Etfw">January 11, 2018</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">Creo que programe menos que el año pasado, pero así mis estadísticas 2017. <a href="https://twitter.com/WakaTime?ref_src=twsrc%5Etfw">@wakatime</a> <a href="https://twitter.com/hashtag/vim?src=hash&amp;ref_src=twsrc%5Etfw">#vim</a> <a href="https://twitter.com/hashtag/linux?src=hash&amp;ref_src=twsrc%5Etfw">#linux</a> <a href="https://twitter.com/hashtag/python?src=hash&amp;ref_src=twsrc%5Etfw">#python</a> <a href="https://t.co/XRZeYgTdkV">pic.twitter.com/XRZeYgTdkV</a></p>&mdash; Jorge Hernández (@lesthack) <a href="https://twitter.com/lesthack/status/951516993609347073?ref_src=twsrc%5Etfw">January 11, 2018</a></blockquote></p>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Dicen que cualquier parecido con la realidad, es mera coincidencia.</p>
+<p><img src="/images/attachments/c8e5fe7f-0dfe-4d4b-b7bc-56116b31adc4.jpeg" alt="Cuando un programador se vuelve administrador de proyectos"></p>
+<hr>
+<p style="font-size: 10px;">Imagen del Header de <a href="https://unsplash.com/photos/mcSDtbWXUZU">Lukas Blazek @goumbik</a></p>]]></description><pubDate>Sun Jan 14 2018 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.slug</href><item><title>Recovery</title><description><![CDATA[ <img src="/images/recovery.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>Después de la decisión de cerrar por definitivo el viejo blog (que hace tiempo había sido víctima de varios ataques DOSS), rescaté la base de datos.</blockquote> ]]><![CDATA[<p>Después de la decisión de cerrar por definitivo el viejo blog (que hace tiempo había sido víctima de varios ataques <a href="/articles/goodbye-horses">DOSS</a>), rescaté la base de datos.</p>
+<p>Esta DB ya la había migrado anteriormente de MySQL a SQLite, por que quería mantener el blog (montando en wordpress) lo mas ligero posible, ya que el servidor en cuestión era super limitado en recursos.</p>
+<p>Pues bien, me tomó poco tiempo sacar toda la info de la tabla wp_posts, para luego escribir cada post en archivos del tipo Markdown y HTML, separados por año.</p>
+<script src="https://gist.github.com/lesthack/cf09452a8063e21868b1380227e9cd62.js"></script>
+
+<p>Y luego estuve haciendo simplemente revisión y actualización manual de algunas cosas para <a href="https://github.com/lesthack/lesthack.github.io/commit/bb9ec0781236c640fa0b8bce542b8c2196bb4d00">integrarlo</a> como post&#39;s de este blog, y ¿Adivinen que?, si, ya quedó.</p>
+<p>Rescaté el 99% de los post&#39;s viejos (sin comentarios lamentablemente) desde el 2007. Así que, no olviden darse una vuelta a &quot;<a href="/articles/">archivos</a>&quot;.</p>
+<hr>
+<p style="font-size: 10px;">Imagen del Header de <a href="https://unsplash.com/photos/awxaj8YEwug">@dougmaloney</a></p>]]></description><pubDate>Sun Dec 31 2017 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.slug</href><item><title>Diciembre</title><description><![CDATA[ <img src="/images/diciembre.jpg" width="100%" /><hr/> ]]><![CDATA[ <blockquote>No había encontrado el momento ideal para escribir sobre lo ocurrido, incluso, aun no estoy seguro de si lo es, pero siento una insoportable necesidad de exteriorizarlo de alguna forma.</blockquote> ]]><![CDATA[<p>Diciembre, fuiste terrible, y no tuviste compasión.</p>
 <p>No me importa si me golpeas a mi, de frente, a palos o con los puños cerrados, suelo levantarme para devolverte las bofetadas con el doble de fuerza (seas tu, o Enero o Noviembre), pero esta vez no solo me golpeaste a mi, si no también a los que me importan.</p>
 <p>Me pregunto yo, ¿Que haces con la felicidad que robas?, ¿La repartes antes de morir o te la quedas?, ¿Gozas de ello?, ¿Estás retorciéndote a carcajadas en este momento?</p>
 <p>Bah, maldito, ya lo hiciste, nos la quitaste y así te fuiste.</p>
@@ -5502,84 +5523,7 @@ Así que como pueden ver, podemos darles el uso que queramos, y veremos un poco 
 <a href="/images/2009/05/script06">
  script06
 </a></p>
-]]></description><pubDate>Sun May 31 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Programación en Bash Linux V: Estructuras [case]</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align:justify;">
- Ahora pongamos un poco mas de imaginación; vamos a crearnos un script que reciba un parámetro que me permita personalizar un poco mas mis acciones, y para ello haremos uso de la sentencia
- <strong>
-  case
- </strong>
- que como bien podemos imaginar actúa de manera idéntica al switch de C (o bien de java).
-</p>
-La forma de acceder al primero parámetro es con $1, así que a programar:</p>
-<pre lang="bash">
-#!/bin/bash
-case $1 in
-    -l)        
-        echo ":: Lista de forma detallada"        
-        ls -l        
-    ;;
-    -r)        
-        echo ":: Lista de forma recursiva"        
-        ls -R        
-    ;;
-esac
-</pre>
-<p style="text-align:justify;">
- Ahora, analicemos el script. Primeramente vemos la linea que indica donde se encuentra el interprete, seguidamente la sentencia
- <strong>
-  case
- </strong>
- que compara el valor del primer parámetro ($1) con los casos
- <strong>
-  -l
- </strong>
- y
- <strong>
-  -r
- </strong>
- .
-</p>
-<p style="text-align:justify;">
- Podemos percatarnos que dentro del caso
- <strong>
-  -l
- </strong>
- hay un echo a pantalla, luego el comando
- <strong>
-  ls -l
- </strong>
- para ver una lista detallada, y al final del caso encontramos
- <strong>
-  ;;
- </strong>
- (dos punto y coma). Esto indica que el caso a terminado. Lo mismo para el siguiente caso, y para terminar la sentencia, la palabra
- <strong>
-  esac
- </strong>
- que como es costumbre en bash así terminan (la palabra inversa a la sentencia).
-</p>
-Ejecutándolo (el script se llama script05)
-<pre>
-$chmod +x script05
-$ ./script05 -l
-:: Lista de forma detallada
-total 24
--rwxr-xr-x 1 lesthack lesthack  40 2009-05-30 16:54 script01
--rwxr-xr-x 1 lesthack lesthack  58 2009-05-30 19:28 script01.5
--rwxr-xr-x 1 lesthack lesthack 485 2009-05-31 00:13 script02
--rwxr-xr-x 1 lesthack lesthack 561 2009-05-31 14:53 script03
--rwxr-xr-x 1 lesthack lesthack 327 2009-05-31 16:49 script04
--rwxr-xr-x 1 lesthack lesthack 139 2009-05-31 17:36 script05
-$ ./script05 -r
-:: Lista de forma recursiva
-.:
-script01  
-script01.5  
-script02
-script03  
-script04  
-script05
-</pre>
-]]></description><pubDate>Sat May 30 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title> Programación en Bash Linux IV: Estructuras [for, while, until]</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align:justify;">
+]]></description><pubDate>Sun May 31 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title> Programación en Bash Linux IV: Estructuras [for, while, until]</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align:justify;">
  Como bien lo dije en el
  <a href="http://old.jorgeluis.com.mx/2009/05/31/programacion-en-bash-linux-iii-estructuras-ifthenelse/">
   post pasado
@@ -5807,192 +5751,84 @@ else
     echo "fichero no encontrado"
 fi
 </pre>
-]]></description><pubDate>Sat May 30 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Programación en Bash Linux II: Variables y Argumentos</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
- El uso de variables en la programación bash es muy sencillo, por ejemplo, para asignarle un valor a una variable se hacer como ya podrás imaginar VARIABLE=valor, sin embargo, para hace uso de ella tendremos que añadirle el $ al inicio, de modo que si quisiéramos imprimir su valor lo harías así: echo $VARIABLE.
+]]></description><pubDate>Sat May 30 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Programación en Bash Linux V: Estructuras [case]</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align:justify;">
+ Ahora pongamos un poco mas de imaginación; vamos a crearnos un script que reciba un parámetro que me permita personalizar un poco mas mis acciones, y para ello haremos uso de la sentencia
+ <strong>
+  case
+ </strong>
+ que como bien podemos imaginar actúa de manera idéntica al switch de C (o bien de java).
 </p>
-Un ejemplo sería:
-<pre lang="bash">
-NOMBRE=&quot;Jorge Luis&quot;
-echo &quot;Bienvenido $NOMBRE&quot;
-</pre>
-Que su salida sería:
-<pre>
-Bienvenido Jorge Luis
-</pre>
-<p style="text-align: justify;">
- También debemos conocer que existen variables de entorno las cuales podemos usar en nuestros scripts. Hay que tener mucho cuidado con estas variables, ya que un cambio podría implicar un mal funcionamiento no solo del programa si no de la terminal en si.
-</p>
-<ul>
- <li>
-  $HOME : Contiene la ruta del directorio home del usuario.
- </li>
- <li>
-  $PATH : Contiene los directorios donde se encuentran los ejecutables
- </li>
- <li>
-  $TERM : nombre del a terminal (Config Terminal)
- </li>
- <li>
-  $BASH : Ruta del interprete bash
- </li>
- <li>
-  $PWD : Directorio Actual
- </li>
-</ul>
-Y existen muchas mas que fácilmente podrás encontrar en google.
-<p style="text-align: justify;">
- Los argumentos realmente se manejan como variables por que lo son de cierta forma, así que por ejemplo, si quisiéramos saber cual es el primer argumento que nos mandan tendríamos que usar $1, $2 para el segundo y así sucesivamente.
-</p>
-Por ello pongo la siguiente lista para saber como actúan:
-<ul>
- <li>
-  $<em> : Todos los argumentos
- </li>
- <li>
-  $# : Numero de argumentos recibidos
- </li>
- <li>
-  $$ : Identificador del proceso
- </li>
- <li>
-  $?  : Resultado de la ejecución del comando anterior
- </li>
- <li>
-  $@ : Crea y devuelve un Array con todos los argumentos con posición
- </li>
- <li>
-  $0 : Nombre del script
- </li>
- <li>
-  $1 : Primero argumento
- </li>
- <li>
-  $2 : Segundo Argumento
- </li>
- <li>
-  $n : n-ésimo argumento
- </li>
-</ul>
-Así que a programar para ver si realmente es verdad lo que he dicho:
+La forma de acceder al primero parámetro es con $1, así que a programar:</p>
 <pre lang="bash">
 #!/bin/bash
-echo &quot;Variables y Argumentos&quot;
-echo &quot;\$HOME: $HOME&quot;
-echo &quot;\$PATH: $PATH&quot;
-echo &quot;\$TERM: $TERM&quot;
-echo &quot;\$$: Identificador del proceso: $$&quot;
-echo &quot;\$?: Resultado de la ejecución del comando anterior: $?&quot;
-echo &quot;\$@: Crea y devuelve un Array con todos los argumentos con posición: $@&quot;
-echo &quot;\$</em>: Todos los argumentos: $<em>&quot;
-echo &quot;\$#: Cantidad de Argumentos: $#&quot;
-echo &quot;\$0: Nombre del archivo: $0&quot;
-echo &quot;\$1: Primer Argumento: $1&quot;
-echo &quot;\$2: Segundo Argumento: $2&quot;
+case $1 in
+    -l)        
+        echo ":: Lista de forma detallada"        
+        ls -l        
+    ;;
+    -r)        
+        echo ":: Lista de forma recursiva"        
+        ls -R        
+    ;;
+esac
 </pre>
-Ejecutamos el script:
+<p style="text-align:justify;">
+ Ahora, analicemos el script. Primeramente vemos la linea que indica donde se encuentra el interprete, seguidamente la sentencia
+ <strong>
+  case
+ </strong>
+ que compara el valor del primer parámetro ($1) con los casos
+ <strong>
+  -l
+ </strong>
+ y
+ <strong>
+  -r
+ </strong>
+ .
+</p>
+<p style="text-align:justify;">
+ Podemos percatarnos que dentro del caso
+ <strong>
+  -l
+ </strong>
+ hay un echo a pantalla, luego el comando
+ <strong>
+  ls -l
+ </strong>
+ para ver una lista detallada, y al final del caso encontramos
+ <strong>
+  ;;
+ </strong>
+ (dos punto y coma). Esto indica que el caso a terminado. Lo mismo para el siguiente caso, y para terminar la sentencia, la palabra
+ <strong>
+  esac
+ </strong>
+ que como es costumbre en bash así terminan (la palabra inversa a la sentencia).
+</p>
+Ejecutándolo (el script se llama script05)
 <pre>
-$ chmod +x script02
-$ ./script02 uno dos tres
+$chmod +x script05
+$ ./script05 -l
+:: Lista de forma detallada
+total 24
+-rwxr-xr-x 1 lesthack lesthack  40 2009-05-30 16:54 script01
+-rwxr-xr-x 1 lesthack lesthack  58 2009-05-30 19:28 script01.5
+-rwxr-xr-x 1 lesthack lesthack 485 2009-05-31 00:13 script02
+-rwxr-xr-x 1 lesthack lesthack 561 2009-05-31 14:53 script03
+-rwxr-xr-x 1 lesthack lesthack 327 2009-05-31 16:49 script04
+-rwxr-xr-x 1 lesthack lesthack 139 2009-05-31 17:36 script05
+$ ./script05 -r
+:: Lista de forma recursiva
+.:
+script01  
+script01.5  
+script02
+script03  
+script04  
+script05
 </pre>
-<pre style="padding-left: 30px;">
-Variables y Argumentos
-$HOME: /home/lesthack
-$PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-$TERM: xterm
-$$: Identificador del proceso: 8671
-$?: Resultado de la ejecución del comando anterior: 0
-$@: Crea y devuelve un Array con todos los argumentos con posición: uno dos tres
-$</em>: Todos los argumentos: uno dos tres
-$#: Cantidad de Argumentos: 3
-$0: Nombre del archivo: ./script02
-$1: Primer Argumento: uno
-$2: Segundo Argumento: dos
-</pre>
-<p>
- Así que como lo hemos visto, ya podemos tratar los argumentos para alguna posible acción.
-</p>
-]]></description><pubDate>Fri May 29 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Programación en Bash Linux I: Hola mundo</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
- Debido a que el lunes presento un examen de sistemas operativos totalmente practico de programación en terminal unix he decidido ponerme a estudiar un poco y que mejor que publicando unos pequeños tutoriales para que se queden aquí por si algún día mas requiero de alguna cosa de estas.
-</p>
-<p style="text-align: justify;">
- Hacia mucho que no programaba en shell, y aunque el curso se centra en sistemas unix, pues optaremos por un sistema de tipo
- <a href="http://es.wikipedia.org/wiki/Unix">
-  unix
- </a>
- (GNU/Linux Debian) y programando sobre
- <a href="http://es.wikipedia.org/wiki/Bash">
-  bash
- </a>
- y no
- <a href="http://es.wikipedia.org/wiki/Ksh">
-  korn shell
- </a>
- como bien la profesora lo pide. ¿por que bash y no ksh? pues por la sencilla razón de que Linux trae por defecto terminales tipo bash y así no tendríamos que instalar ksh. Además, el uso que le daremos no será de gran importancia para optar por ksh.
-</p>
-<p style="text-align: justify;">
- Introducción:
-</p>
-<p style="text-align: justify;">
- Los scripts que podemos programar bajo shell son de gran utilidad para un sin fin de cuestiones, como por ejemplo ahorrarnos el tener que escribir grandes cantidades de comandos para bajar una lista de videos de youtube con sencillas expresiones regulares, buscar archivos, renombrar directorios recursivamente. o hasta posibles
- <a href="http://es.wikipedia.org/wiki/Exploit">
-  exploits
- </a>
- para nuestros ataques mágicos.
-</p>
-<p style="text-align: justify;">
- Usaremos nuestro editor de textos favorito, así que yo propongo &quot;
- <a href="http://es.wikipedia.org/wiki/Nano_(editor_de_texto)" target="_blank">
-  nano
- </a>
- &quot; ya que estamos sobre terminal.
-</p>
-<p style="text-align: justify;">
- Nuestro primer programa:
-</p>
-<p style="text-align: justify;">
- Bien, como estamos acostumbrados:
-</p>
-<pre>
-$nano script01
-</pre>
-<pre lang="bash">
-#!/bin/bash
-echo &quot;Hola mundo&quot;
-</pre>
-<pre>
-$chmod +x script01
-</pre>
-<p style="text-align: justify;">
- Este es nuestro programa al que llamamos script01 (lo creamos con
- <strong>
-  nano script01
- </strong>
- ), le damos permisos de ejecución con
- <strong>
-  chmod +x script01
- </strong>
- , y podremos ejecutarlo con
- <strong>
-  ./script01
- </strong>
- obteniendo una salida como esta:
-</p>
-<pre>
-$./script01
-Hola mundo
-</pre>
-<p style="text-align: justify;">
- Como en todos los lenguajes, en los scripts bash tambien podemos hacer uso de comentarios para documentar nuestros scripts con el caracter #. Tambien podemos notar que en la primer linea del programa script01 empieza con
- <strong>
-  #!/bin/bash
- </strong>
- , que como es tradicional en los scripts nos indica donde se encuentra el interprete. El comando para mandar a pantalla es
- <strong>
-  echo
- </strong>
- como bien lo pudimos notar.
-</p>
-]]></description><pubDate>Fri May 29 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>XII Feria del Libro Cortazar, GTO</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
+]]></description><pubDate>Sat May 30 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>XII Feria del Libro Cortazar, GTO</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
  EL pasado viernes 22 de Mayo inicio la XII Feria del Libro aquí en
  <a href="http://es.wikipedia.org/wiki/Cortazar_(Guanajuato)">
   Cortazar
@@ -6152,6 +5988,191 @@ Hola mundo
 <center>
  <img src="http://www.elresumen.com/libros/aventuras_de_arthur_gordon_pym.jpg" alt="Las Aventuras de Artur Gordon Pym" />
 </center>
+]]></description><pubDate>Fri May 29 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Programación en Bash Linux I: Hola mundo</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+ Debido a que el lunes presento un examen de sistemas operativos totalmente practico de programación en terminal unix he decidido ponerme a estudiar un poco y que mejor que publicando unos pequeños tutoriales para que se queden aquí por si algún día mas requiero de alguna cosa de estas.
+</p>
+<p style="text-align: justify;">
+ Hacia mucho que no programaba en shell, y aunque el curso se centra en sistemas unix, pues optaremos por un sistema de tipo
+ <a href="http://es.wikipedia.org/wiki/Unix">
+  unix
+ </a>
+ (GNU/Linux Debian) y programando sobre
+ <a href="http://es.wikipedia.org/wiki/Bash">
+  bash
+ </a>
+ y no
+ <a href="http://es.wikipedia.org/wiki/Ksh">
+  korn shell
+ </a>
+ como bien la profesora lo pide. ¿por que bash y no ksh? pues por la sencilla razón de que Linux trae por defecto terminales tipo bash y así no tendríamos que instalar ksh. Además, el uso que le daremos no será de gran importancia para optar por ksh.
+</p>
+<p style="text-align: justify;">
+ Introducción:
+</p>
+<p style="text-align: justify;">
+ Los scripts que podemos programar bajo shell son de gran utilidad para un sin fin de cuestiones, como por ejemplo ahorrarnos el tener que escribir grandes cantidades de comandos para bajar una lista de videos de youtube con sencillas expresiones regulares, buscar archivos, renombrar directorios recursivamente. o hasta posibles
+ <a href="http://es.wikipedia.org/wiki/Exploit">
+  exploits
+ </a>
+ para nuestros ataques mágicos.
+</p>
+<p style="text-align: justify;">
+ Usaremos nuestro editor de textos favorito, así que yo propongo &quot;
+ <a href="http://es.wikipedia.org/wiki/Nano_(editor_de_texto)" target="_blank">
+  nano
+ </a>
+ &quot; ya que estamos sobre terminal.
+</p>
+<p style="text-align: justify;">
+ Nuestro primer programa:
+</p>
+<p style="text-align: justify;">
+ Bien, como estamos acostumbrados:
+</p>
+<pre>
+$nano script01
+</pre>
+<pre lang="bash">
+#!/bin/bash
+echo &quot;Hola mundo&quot;
+</pre>
+<pre>
+$chmod +x script01
+</pre>
+<p style="text-align: justify;">
+ Este es nuestro programa al que llamamos script01 (lo creamos con
+ <strong>
+  nano script01
+ </strong>
+ ), le damos permisos de ejecución con
+ <strong>
+  chmod +x script01
+ </strong>
+ , y podremos ejecutarlo con
+ <strong>
+  ./script01
+ </strong>
+ obteniendo una salida como esta:
+</p>
+<pre>
+$./script01
+Hola mundo
+</pre>
+<p style="text-align: justify;">
+ Como en todos los lenguajes, en los scripts bash tambien podemos hacer uso de comentarios para documentar nuestros scripts con el caracter #. Tambien podemos notar que en la primer linea del programa script01 empieza con
+ <strong>
+  #!/bin/bash
+ </strong>
+ , que como es tradicional en los scripts nos indica donde se encuentra el interprete. El comando para mandar a pantalla es
+ <strong>
+  echo
+ </strong>
+ como bien lo pudimos notar.
+</p>
+]]></description><pubDate>Fri May 29 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Programación en Bash Linux II: Variables y Argumentos</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+ El uso de variables en la programación bash es muy sencillo, por ejemplo, para asignarle un valor a una variable se hacer como ya podrás imaginar VARIABLE=valor, sin embargo, para hace uso de ella tendremos que añadirle el $ al inicio, de modo que si quisiéramos imprimir su valor lo harías así: echo $VARIABLE.
+</p>
+Un ejemplo sería:
+<pre lang="bash">
+NOMBRE=&quot;Jorge Luis&quot;
+echo &quot;Bienvenido $NOMBRE&quot;
+</pre>
+Que su salida sería:
+<pre>
+Bienvenido Jorge Luis
+</pre>
+<p style="text-align: justify;">
+ También debemos conocer que existen variables de entorno las cuales podemos usar en nuestros scripts. Hay que tener mucho cuidado con estas variables, ya que un cambio podría implicar un mal funcionamiento no solo del programa si no de la terminal en si.
+</p>
+<ul>
+ <li>
+  $HOME : Contiene la ruta del directorio home del usuario.
+ </li>
+ <li>
+  $PATH : Contiene los directorios donde se encuentran los ejecutables
+ </li>
+ <li>
+  $TERM : nombre del a terminal (Config Terminal)
+ </li>
+ <li>
+  $BASH : Ruta del interprete bash
+ </li>
+ <li>
+  $PWD : Directorio Actual
+ </li>
+</ul>
+Y existen muchas mas que fácilmente podrás encontrar en google.
+<p style="text-align: justify;">
+ Los argumentos realmente se manejan como variables por que lo son de cierta forma, así que por ejemplo, si quisiéramos saber cual es el primer argumento que nos mandan tendríamos que usar $1, $2 para el segundo y así sucesivamente.
+</p>
+Por ello pongo la siguiente lista para saber como actúan:
+<ul>
+ <li>
+  $<em> : Todos los argumentos
+ </li>
+ <li>
+  $# : Numero de argumentos recibidos
+ </li>
+ <li>
+  $$ : Identificador del proceso
+ </li>
+ <li>
+  $?  : Resultado de la ejecución del comando anterior
+ </li>
+ <li>
+  $@ : Crea y devuelve un Array con todos los argumentos con posición
+ </li>
+ <li>
+  $0 : Nombre del script
+ </li>
+ <li>
+  $1 : Primero argumento
+ </li>
+ <li>
+  $2 : Segundo Argumento
+ </li>
+ <li>
+  $n : n-ésimo argumento
+ </li>
+</ul>
+Así que a programar para ver si realmente es verdad lo que he dicho:
+<pre lang="bash">
+#!/bin/bash
+echo &quot;Variables y Argumentos&quot;
+echo &quot;\$HOME: $HOME&quot;
+echo &quot;\$PATH: $PATH&quot;
+echo &quot;\$TERM: $TERM&quot;
+echo &quot;\$$: Identificador del proceso: $$&quot;
+echo &quot;\$?: Resultado de la ejecución del comando anterior: $?&quot;
+echo &quot;\$@: Crea y devuelve un Array con todos los argumentos con posición: $@&quot;
+echo &quot;\$</em>: Todos los argumentos: $<em>&quot;
+echo &quot;\$#: Cantidad de Argumentos: $#&quot;
+echo &quot;\$0: Nombre del archivo: $0&quot;
+echo &quot;\$1: Primer Argumento: $1&quot;
+echo &quot;\$2: Segundo Argumento: $2&quot;
+</pre>
+Ejecutamos el script:
+<pre>
+$ chmod +x script02
+$ ./script02 uno dos tres
+</pre>
+<pre style="padding-left: 30px;">
+Variables y Argumentos
+$HOME: /home/lesthack
+$PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+$TERM: xterm
+$$: Identificador del proceso: 8671
+$?: Resultado de la ejecución del comando anterior: 0
+$@: Crea y devuelve un Array con todos los argumentos con posición: uno dos tres
+$</em>: Todos los argumentos: uno dos tres
+$#: Cantidad de Argumentos: 3
+$0: Nombre del archivo: ./script02
+$1: Primer Argumento: uno
+$2: Segundo Argumento: dos
+</pre>
+<p>
+ Así que como lo hemos visto, ya podemos tratar los argumentos para alguna posible acción.
+</p>
 ]]></description><pubDate>Fri May 29 2009 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Tesis: Una pelicula de Alejandro Amenabar</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: center;">
  <a href="/images/2009/05/tesis.jpg">
   <img class="aligncenter size-full wp-image-676" title="tesis" src="/images/2009/05/tesis.jpg" alt="tesis" />
@@ -6604,17 +6625,7 @@ web&#39;s en todos los desarrollos que hagamos. Así que el día de hoy será de
   <img class="aligncenter size-medium wp-image-572" title="fundamentos" src="/images/2009/03/fundamentos.png" alt="fundamentos" />
  </a>
 </p>
-]]></description><pubDate>Sat Mar 28 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Introduction to algorithms</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>Siguiendo la otra recomendación que nuestro amigo
-<a href="http://old.jorgeluis.com.mx/2009/03/14/preparandonos-para-el-anpa/#comment-179">
- @thot
-</a>
-nos ha hecho, vamos a agregarlo a nuestra guía de estudio y preparación.</p>
-<p style="text-align: center;">
- <a href="http://rapidshare.com/files/140406217/Introduction_to_Algorithms__2nd_Ed_-_Thomas_H._Cormen.pdf">
-  <img class="aligncenter size-full wp-image-554" title="introduction-to-algorithms1" src="/images/2009/03/introduction-to-algorithms1.png" alt="introduction-to-algorithms1"  />
- </a>
-</p>
-]]></description><pubDate>Sat Mar 21 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Proyecto: Las 8 reinas y el Puzzle</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+]]></description><pubDate>Sat Mar 28 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Proyecto: Las 8 reinas y el Puzzle</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Uno de los trabajos que realice el semestre pasado para la materia de Inteligencia Artificial fue el problema de las 8 reinas y el puzzle que tienen que ver mas con teoría de juegos. Sin embargo, me divertí mucho haciendo tanto la lógica de los mismos como la interfaz.
 </p>
 <p style="text-align: justify;">
@@ -6653,16 +6664,17 @@ Enlace:
   Proyecto 8 Reinas y Puzzle
  </a>
 </p>
-]]></description><pubDate>Sat Mar 21 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Hosting nuevo !!</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: center;">
- <a href="http://old.jorgeluis.com.mx/wp-content/uploads/2009/03/tux-born-2-frag.jpg">
-  <img class="aligncenter" src="http://old.jorgeluis.com.mx/wp-content/uploads/2009/03/tux-born-2-frag.jpg" alt="" width="300" height="240" />
+]]></description><pubDate>Sat Mar 21 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Introduction to algorithms</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>Siguiendo la otra recomendación que nuestro amigo
+<a href="http://old.jorgeluis.com.mx/2009/03/14/preparandonos-para-el-anpa/#comment-179">
+ @thot
+</a>
+nos ha hecho, vamos a agregarlo a nuestra guía de estudio y preparación.</p>
+<p style="text-align: center;">
+ <a href="http://rapidshare.com/files/140406217/Introduction_to_Algorithms__2nd_Ed_-_Thomas_H._Cormen.pdf">
+  <img class="aligncenter size-full wp-image-554" title="introduction-to-algorithms1" src="/images/2009/03/introduction-to-algorithms1.png" alt="introduction-to-algorithms1"  />
  </a>
-</p></p>
-<p><p style="text-align: justify;">
- Últimamente se habrán percatado que mi dominio de pronto se caía y de pronto volvia a la normalidad, y todo era debido a que el proveedor tenia problemas. En fin, ya tengo hosting nuevo y con esto espero que con el tiempo que me sobra (que es muy poco) publique mucho mas seguido.
 </p>
-Así que mil disculpas y volvemos de nuevo.</p>
-]]></description><pubDate>Fri Mar 13 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Preparandonos para el ANPA</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+]]></description><pubDate>Sat Mar 21 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Preparandonos para el ANPA</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Como lo mencioné
  <a href="/images/2009/03/11/con-el-clubdeprogracom-y-para-el-anpa/" target="_blank">
   antes
@@ -6696,6 +6708,15 @@ Via:
   Legado Lince
  </a>
 </p>
+]]></description><pubDate>Fri Mar 13 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Hosting nuevo !!</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: center;">
+ <a href="http://old.jorgeluis.com.mx/wp-content/uploads/2009/03/tux-born-2-frag.jpg">
+  <img class="aligncenter" src="http://old.jorgeluis.com.mx/wp-content/uploads/2009/03/tux-born-2-frag.jpg" alt="" width="300" height="240" />
+ </a>
+</p></p>
+<p><p style="text-align: justify;">
+ Últimamente se habrán percatado que mi dominio de pronto se caía y de pronto volvia a la normalidad, y todo era debido a que el proveedor tenia problemas. En fin, ya tengo hosting nuevo y con esto espero que con el tiempo que me sobra (que es muy poco) publique mucho mas seguido.
+</p>
+Así que mil disculpas y volvemos de nuevo.</p>
 ]]></description><pubDate>Fri Mar 13 2009 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Con el clubdeprogra.com y para el ANPA</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: center;">
  <a href="http://lesthack.ihtoa.org/files/images/03_2009/anpa.png">
   <img class="alignnone" src="http://lesthack.ihtoa.org/files/images/03_2009/anpa.png" alt="" width="250" height="76" />
@@ -8123,7 +8144,17 @@ La serie tiene la siguiente secuencia:
  </b>
  Modifica o cambia completamente el programa de Pablito ya que éste resulta muy tardado.
 </p>
-]]></description><pubDate>Wed Dec 24 2008 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Cambiar entre versiones de java :: Linux</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+]]></description><pubDate>Wed Dec 24 2008 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Feliz Navidad 2008</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>Parece que
+<a href="/articles/2007/wallpaper-codeplasticlesthack" target="_blank">
+ fue ayer
+</a>
+cuando inicie este simple blog, pero ya va para dos años de su inicio y me parece sorprendente que aun siga publicando.</p>
+<p>Y bueno,
+<a href="/images/2007/12/29/feliz-navidad-y-feliz-ano-nuevo/" target="_blank">
+ nuevamente
+</a>
+les deseo una FELIZ NAVIDAD en este 24-25 de diciembre.</p>
+]]></description><pubDate>Tue Dec 23 2008 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Cambiar entre versiones de java :: Linux</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Acabo de reinstalar todo debido a la actualización que hice de Ubuntu 8.04 a Intrepid Ibex así que tuve que reinstalar java, pero no recordaba como cambiar la versión de java predeterminada a la mas actual (
  <a href="http://java.sun.com/javase/6/" target="_blank">
   java 1.6
@@ -8170,16 +8201,6 @@ Java HotSpot(TM) Client VM (build 11.0-b15, mixed mode, sharing)
 <p>En algunas ocasiones me ha pasado que ni aun haciendo lo anterior la versión de java cambia, así que debemos hacer algunas cosas mas .</p>
 <pre><code>$ sudo update-java-alternatives -l$ sudo update-java-alternatives -s java-6-sun
 </code></pre><p>Y listo.</p>
-]]></description><pubDate>Tue Dec 23 2008 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Feliz Navidad 2008</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>Parece que
-<a href="/articles/2007/wallpaper-codeplasticlesthack" target="_blank">
- fue ayer
-</a>
-cuando inicie este simple blog, pero ya va para dos años de su inicio y me parece sorprendente que aun siga publicando.</p>
-<p>Y bueno,
-<a href="/images/2007/12/29/feliz-navidad-y-feliz-ano-nuevo/" target="_blank">
- nuevamente
-</a>
-les deseo una FELIZ NAVIDAD en este 24-25 de diciembre.</p>
 ]]></description><pubDate>Tue Dec 23 2008 18:00:00 GMT-0600 (CST)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>xAiJ :: mi projecto con pygame</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<div class="oneColumn">
  <p style="text-align: justify;">
   Cada vez que termina un semestre siempre presento ante ustedes algunos de mis proyectos que realice durante el curso, en este caso del semestre Ago-Dic 08 que para mi es el Séptimo de la Carrera de ISC (Ingeniería en Sistemas Computacionales) en el
@@ -8729,37 +8750,7 @@ sobre un excelente mapa mental de este maravilloso lenguaje. Me ha fascinado.
   Descargar Doc PyGame
  </a>
 </h2>
-]]></description><pubDate>Fri Oct 24 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Python: Convertir Scripts .py a .exe</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>En el
-<a href="http://old.jorgeluis.com.mx/2008/10/23/compilar-python-a-bytecode/">
- post anterior
-</a>
-les mostré como generar un ByteCode de scripts de python en linux, pero para aquellos quienes programen python sobre windows, una alternativa comparable es
-<a href="http://www.py2exe.org/" target="_blank">
- py2exe
-</a>
-.
-<a href="http://www.py2exe.org/">
- Py2Exe
-</a>
-es una herramienta que nos permite generar un archivo ejecutable (.exe).En la
-<a href="http://www.py2exe.org/index.cgi/Tutorial" target="_blank">
- pagina oficial
-</a>
-de py2exe podremos encontrar la documentación necesaria para hacerlo.Tambien existe una alternativa gráfica llamada
-<a href="http://cverdugo.wordpress.com/2008/09/13/gui-py2exe-01/" target="_blank">
- GUI py2exe
-</a>
-.Enlaces:</p>
-<p style="padding-left: 30px;">
- <a href="http://www.py2exe.org/index.cgi/Tutorial" target="_blank">
-  Py2Exe
- </a>
-</p>
-<p style="padding-left: 30px;">
- <a href="http://sites.google.com/site/cavgutiles/gui-py2exe" target="_blank">
-  GUI Py2Exe
- </a>
-</p>]]></description><pubDate>Wed Oct 22 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Compilar Python a ByteCode</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>La forma de correr un programa echo en python normalmente es como un script:</p>
+]]></description><pubDate>Fri Oct 24 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Compilar Python a ByteCode</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>La forma de correr un programa echo en python normalmente es como un script:</p>
 <pre><code> $ python programa.py
 </code></pre><p style="text-align: justify;">
  Pero existe la formar de obtener un ByteCode de python y obtener mejor rapidez en nuestras aplicaciones. Python está escrito en C, por lo que convertir un código de python a ByteCode resulta accesible, este ByteCode generado es puede ejecutarse gracias a CPython Interpreter.
@@ -8797,7 +8788,41 @@ La manera de hacerlo es la siguiente
   effbot.org
  </a>
 </p>
-]]></description><pubDate>Wed Oct 22 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>OpenGL en C + Anjuta + Linux</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+]]></description><pubDate>Wed Oct 22 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Python: Convertir Scripts .py a .exe</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>En el
+<a href="http://old.jorgeluis.com.mx/2008/10/23/compilar-python-a-bytecode/">
+ post anterior
+</a>
+les mostré como generar un ByteCode de scripts de python en linux, pero para aquellos quienes programen python sobre windows, una alternativa comparable es
+<a href="http://www.py2exe.org/" target="_blank">
+ py2exe
+</a>
+.
+<a href="http://www.py2exe.org/">
+ Py2Exe
+</a>
+es una herramienta que nos permite generar un archivo ejecutable (.exe).En la
+<a href="http://www.py2exe.org/index.cgi/Tutorial" target="_blank">
+ pagina oficial
+</a>
+de py2exe podremos encontrar la documentación necesaria para hacerlo.Tambien existe una alternativa gráfica llamada
+<a href="http://cverdugo.wordpress.com/2008/09/13/gui-py2exe-01/" target="_blank">
+ GUI py2exe
+</a>
+.Enlaces:</p>
+<p style="padding-left: 30px;">
+ <a href="http://www.py2exe.org/index.cgi/Tutorial" target="_blank">
+  Py2Exe
+ </a>
+</p>
+<p style="padding-left: 30px;">
+ <a href="http://sites.google.com/site/cavgutiles/gui-py2exe" target="_blank">
+  GUI Py2Exe
+ </a>
+</p>]]></description><pubDate>Wed Oct 22 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Mi Desktop en Gnome</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>Como en esta ocasión no me alcanzo el tiempo para poner algo, pongo como esta el desktop en el que trabajo actualmente.</p>
+<p><a href="http://lh6.ggpht.com/lesthack/SOyyX1rGe5I/AAAAAAAAAwA/NhH83xcf5X0/Escritorio-Oct.png">
+ <img src="http://codeplasticlesthack.googlepages.com/Escritorio-Oct.png" alt="Mi Desktop" />
+</a></p>
+]]></description><pubDate>Tue Oct 07 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>OpenGL en C + Anjuta + Linux</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Algunos de nosotros nos gusta programar de vez en cuando en C, C++, y hay otros a quienes nos gusta hacerlo en un simple editor de texto.
 </p>
 <p style="text-align: justify;">
@@ -8918,10 +8943,6 @@ Ya casi terminamos el proyecto. Solo confirmamos lo anterior:
 <p style="text-align: left;">
  Dudas y preguntas, por favor, comentenlas.
 </p>
-]]></description><pubDate>Tue Oct 07 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Mi Desktop en Gnome</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>Como en esta ocasión no me alcanzo el tiempo para poner algo, pongo como esta el desktop en el que trabajo actualmente.</p>
-<p><a href="http://lh6.ggpht.com/lesthack/SOyyX1rGe5I/AAAAAAAAAwA/NhH83xcf5X0/Escritorio-Oct.png">
- <img src="http://codeplasticlesthack.googlepages.com/Escritorio-Oct.png" alt="Mi Desktop" />
-</a></p>
 ]]></description><pubDate>Tue Oct 07 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Convertir FLV a MP4 en Linux con Flv2Mpeg4</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Ayer por la tarde traté de convertir un video del tipo flv que descargamos de youtube al formato mp4 con ffmpeg.
 </p>
@@ -9107,26 +9128,7 @@ es un sitio de información muy completo que despejara tus dudas que aun tienes 
 <a href="http://www.obtengalinux.org/">
  http://www.obtengalinux.org/
 </a></p>
-]]></description><pubDate>Sat Sep 13 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Instalando DBDesigner en Ubuntu</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
- Para la materia de Base de Datos para Web estamos utilizando gestores CASE, por lo que me decidí por utilizar uno libre y potente, se dice que
- <a href="http://fabforce.net/dbdesigner4/">
-  DBDesigner
- </a>
- es la alternativa a
- <a href="http://www.oracle.com/technology/products/designer/index.html">
-  Oracle Designer
- </a>
- , así ahora vean la potencia.
-</p>
-El howto nos lo da
-<a href="http://jroliva.wordpress.com/">
- Juan Oliva
-</a>
-, y aquí les dejo el link:
-<a href="http://jroliva.wordpress.com/2007/06/06/howto-instalacion-dbdesigner-sobre-ubuntu-fiesty/">
- Howto instalación DBDESIGNER
-</a></p>
-]]></description><pubDate>Thu Sep 04 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Concurso de Programación</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
+]]></description><pubDate>Sat Sep 13 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Concurso de Programación</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
  El
  <a href="http://www.itc.mx/itc/scripts/index.php">
   Instituto Tecnológico de Celaya
@@ -9149,7 +9151,26 @@ El howto nos lo da
  <p style="text-align: justify;">
   Nota: Por cierto, hace poco hice una pequeña implementación de un selector aleatorio de los problemas de la ACM en el blog, lo pueden encontrar del lado derecho. Suerte a todos. !!
  </p>
-</blockquote>]]></description><pubDate>Thu Sep 04 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Diseños de Agosto</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[]]></description><pubDate>Sat Aug 30 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Lector ID3 para MP3 en Javascript</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+</blockquote>]]></description><pubDate>Thu Sep 04 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Instalando DBDesigner en Ubuntu</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
+ Para la materia de Base de Datos para Web estamos utilizando gestores CASE, por lo que me decidí por utilizar uno libre y potente, se dice que
+ <a href="http://fabforce.net/dbdesigner4/">
+  DBDesigner
+ </a>
+ es la alternativa a
+ <a href="http://www.oracle.com/technology/products/designer/index.html">
+  Oracle Designer
+ </a>
+ , así ahora vean la potencia.
+</p>
+El howto nos lo da
+<a href="http://jroliva.wordpress.com/">
+ Juan Oliva
+</a>
+, y aquí les dejo el link:
+<a href="http://jroliva.wordpress.com/2007/06/06/howto-instalacion-dbdesigner-sobre-ubuntu-fiesty/">
+ Howto instalación DBDESIGNER
+</a></p>
+]]></description><pubDate>Thu Sep 04 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Diseños de Agosto</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[]]></description><pubDate>Sat Aug 30 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Lector ID3 para MP3 en Javascript</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Dándome una vuelta por
  <a href="http://www.anieto2k.com/2008/08/19/lee-los-datos-id3-de-tus-mp3-con-javascript/">
   aniet2k
@@ -9594,7 +9615,18 @@ Enlace:
  Por el momento aquí pongo las pocas fotos que pude tomar.
 </p>
 <a href="https://photos.app.goo.gl/8ID7XaSbCMPEVbUg1">Album</a></p>
-]]></description><pubDate>Wed Jul 23 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Apagado Automático en Linux</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
+]]></description><pubDate>Wed Jul 23 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Desinstalar kernel anterior al nuevo Ubuntu</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>En ocasiones, cuando salen nuevas actualizaciones del Kernel, este se instala sin eliminar al anterior, por cuestiones de seguridad lo mantiene, aunque es un poco tedioso tener en nuestro grub una lista larga de kernels para iniciar nuestro sistema.Ya que aveces se me olvida como, y supongo que hay quienes como yo le gustaría eliminar algunos, aquí pongo como los comandos necesarios para hacerlo (Se puede hacer con Synaptic pero me gusta mas por consola).Primero, debemos ver la lista de los kernels disponibles en nuestro sistema.</p>
+<pre><code>sudo dpkg -l | grep linux-image
+</code></pre><p>Y nos muestra algo como esto:</p>
+<pre><code>ii  linux-image-2.6.24-18-generic              2.6.24-18.32                        Linux kernel image for version 2.6.24 on x86ii  linux-image-2.6.24-19-generic              2.6.24-19.36                        Linux kernel image for version 2.6.24 on x86ii  linux-image-generic                        2.6.24.19.21                        Generic Linux kernel image
+</code></pre><p>Podemos observar que tengo el 2.6.24-18 y 2.6.24-19, por lo que eliminaré el 2.6.24-18.Pero, cual estoy usando ahora. Para saber que Kernel usamos ejecutamos:</p>
+<pre><code>uname -r
+</code></pre><p>Como estoy usando el 2.6.24-19, podemos continuar.Para desinstalar un kernel ejecutamos:</p>
+<pre><code>sudo apt-get remove --purge linux-image-2.6.24-18-generic
+</code></pre><p>Nos muestra lo siguiente, y decimos que si.</p>
+<pre><code>lesthack@lesthack-laptop:~$ sudo apt-get remove --purge linux-image-2.6.24-18-genericLeyendo lista de paquetes... HechoCreando árbol de dependenciasLeyendo la información de estado... HechoLos siguientes paquetes se ELIMINARÁN:  linux-image-2.6.24-18-generic* linux-restricted-modules-2.6.24-18-generic*  linux-ubuntu-modules-2.6.24-18-generic*0 actualizados, 0 se instalarán, 3 para eliminar y 0 no actualizados.Se liberarán 126MB después de desempaquetar.¿Desea continuar [S/n]?
+</code></pre><p>Y listo.</p>
+]]></description><pubDate>Mon Jul 21 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Apagado Automático en Linux</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  En ocasiones, cuando por las noches estoy descargando algo y ya me muero de sueño, programo al sistema para que este se apague a cierta hora o en tanto tiempo, así que, yo duermo tranquilamente y la pc se apaga solita cuando yo le he indicado.
 </p>
 <p style="text-align: justify;">
@@ -9629,17 +9661,6 @@ Enlace:
  </code>
  <img src="http://gshutdown.tuxfamily.org/images/screenshots/en/1.png" alt="" />
 </p>
-]]></description><pubDate>Mon Jul 21 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Desinstalar kernel anterior al nuevo Ubuntu</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p>En ocasiones, cuando salen nuevas actualizaciones del Kernel, este se instala sin eliminar al anterior, por cuestiones de seguridad lo mantiene, aunque es un poco tedioso tener en nuestro grub una lista larga de kernels para iniciar nuestro sistema.Ya que aveces se me olvida como, y supongo que hay quienes como yo le gustaría eliminar algunos, aquí pongo como los comandos necesarios para hacerlo (Se puede hacer con Synaptic pero me gusta mas por consola).Primero, debemos ver la lista de los kernels disponibles en nuestro sistema.</p>
-<pre><code>sudo dpkg -l | grep linux-image
-</code></pre><p>Y nos muestra algo como esto:</p>
-<pre><code>ii  linux-image-2.6.24-18-generic              2.6.24-18.32                        Linux kernel image for version 2.6.24 on x86ii  linux-image-2.6.24-19-generic              2.6.24-19.36                        Linux kernel image for version 2.6.24 on x86ii  linux-image-generic                        2.6.24.19.21                        Generic Linux kernel image
-</code></pre><p>Podemos observar que tengo el 2.6.24-18 y 2.6.24-19, por lo que eliminaré el 2.6.24-18.Pero, cual estoy usando ahora. Para saber que Kernel usamos ejecutamos:</p>
-<pre><code>uname -r
-</code></pre><p>Como estoy usando el 2.6.24-19, podemos continuar.Para desinstalar un kernel ejecutamos:</p>
-<pre><code>sudo apt-get remove --purge linux-image-2.6.24-18-generic
-</code></pre><p>Nos muestra lo siguiente, y decimos que si.</p>
-<pre><code>lesthack@lesthack-laptop:~$ sudo apt-get remove --purge linux-image-2.6.24-18-genericLeyendo lista de paquetes... HechoCreando árbol de dependenciasLeyendo la información de estado... HechoLos siguientes paquetes se ELIMINARÁN:  linux-image-2.6.24-18-generic* linux-restricted-modules-2.6.24-18-generic*  linux-ubuntu-modules-2.6.24-18-generic*0 actualizados, 0 se instalarán, 3 para eliminar y 0 no actualizados.Se liberarán 126MB después de desempaquetar.¿Desea continuar [S/n]?
-</code></pre><p>Y listo.</p>
 ]]></description><pubDate>Mon Jul 21 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>PopularNoise</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: center;">
  <a href="http://old.jorgeluis.com.mx/wp-content/uploads/2008/07/inside3.jpg">
   <img class="size-medium wp-image-44" title="outside3" src="http://old.jorgeluis.com.mx/wp-content/uploads/2008/07/outside3-300x235.jpg" alt="" width="300" height="235" />
@@ -9784,7 +9805,17 @@ Espero este en buen camino.
   Telmex
  </a>
 </p>
-]]></description><pubDate>Wed Jun 11 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Cubescape</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
+]]></description><pubDate>Wed Jun 11 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Alternativa3D 5.0</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
+ Los integrantes de AlternativaPlatfrom han dejado ver algunas de las maravillas que pueden hacer con su motor 3D (muy poderoso) que en su primer etapa va muy bien.
+</p>
+<a title="Bunker" href="http://blog.alternativaplatform.com/ru/files/2008/04/bunker_fp10.swf">
+ <img class="aligncenter" src="http://blog.alternativaplatform.com/ru/files/2008/05/a3d_fp10_bunker.jpg" alt="AlternativaPlatform" />
+</a>
+Enlace:
+<a title="AlternativaPlatform" href="http://blog.alternativaplatform.com/en/">
+ AlternativaPlatform
+</a></p>
+]]></description><pubDate>Fri May 16 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Cubescape</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
  Durante buen rato ya he probado las ventajas que nos ofrece utilizar Ajax, sin embargo, esta vez si me he quedado sorprendido.
 </p></p>
 <p><p style="text-align: justify;">
@@ -9800,16 +9831,6 @@ Espero este en buen camino.
 Enlace:
 <a href="http://www.themaninblue.com/experiment/Cubescape/new.php">
  Cubescape
-</a></p>
-]]></description><pubDate>Fri May 16 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Alternativa3D 5.0</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p><p style="text-align: justify;">
- Los integrantes de AlternativaPlatfrom han dejado ver algunas de las maravillas que pueden hacer con su motor 3D (muy poderoso) que en su primer etapa va muy bien.
-</p>
-<a title="Bunker" href="http://blog.alternativaplatform.com/ru/files/2008/04/bunker_fp10.swf">
- <img class="aligncenter" src="http://blog.alternativaplatform.com/ru/files/2008/05/a3d_fp10_bunker.jpg" alt="AlternativaPlatform" />
-</a>
-Enlace:
-<a title="AlternativaPlatform" href="http://blog.alternativaplatform.com/en/">
- AlternativaPlatform
 </a></p>
 ]]></description><pubDate>Fri May 16 2008 19:00:00 GMT-0500 (CDT)</pubDate><link>http://jorgeluis.com.mx</link><guid isPermaLink="true">http://jorgeluis.com.mx</guid></item><href>= "/articles/" + article.year + "/" + article.slug</href><item><title>Proyecto Método Simplex</title><description><![CDATA[ <blockquote></blockquote> ]]><![CDATA[<p style="text-align: justify;">
  Con el fin de cursos (me alegra que se acaben las presiones) por fin puedo publicar, y con ello, quiero compartir algunos de los proyectos que realicé durante el semestre.
